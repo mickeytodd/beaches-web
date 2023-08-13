@@ -1,0 +1,26 @@
+.beachNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+}
+
+.navLogo {
+    color: white;
+    font-size: 2em;
+}
+
+.navLinks {
+    color: white;
+    list-style-type: none;
+    display: flex;
+}
+
+.navLinks .navLink {
+    font-size: 1.3em;
+    padding: 15px;
+
+    &:hover {
+        color: antiquewhite;
+    }
+}
