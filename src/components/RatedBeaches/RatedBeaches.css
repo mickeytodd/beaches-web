@@ -1,7 +1,18 @@
+.rated-beaches {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .rated-beaches__cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
 }
+
+
 
 .rated-beaches__title {
     color: black;

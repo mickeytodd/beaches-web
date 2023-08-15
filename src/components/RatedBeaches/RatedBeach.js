@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Card from '../UI/Card';
 import './RatedBeach.css';
 

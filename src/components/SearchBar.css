@@ -28,12 +28,11 @@ h2 {
 
 
 .search-bar {
-    display: flex;
-    align-items: center;
     background-color: white;
-    justify-content: center;
-    padding: 8px;
+    padding: 10px;
     border-radius: 10em;
+    margin: 1.2em 0;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
 }
 
 .text-input {
@@ -42,6 +41,9 @@ h2 {
     padding: 10px;
     outline: none;
     width: 450px;
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+
 }
 
 .search-button {
@@ -54,4 +56,11 @@ h2 {
     width: 110px;
     text-transform: uppercase;
     cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #e68a02;
+    }
 }

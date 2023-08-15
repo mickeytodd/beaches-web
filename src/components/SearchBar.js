@@ -14,9 +14,10 @@ const SearchBar = ({ onSearch }) => {
             <p className='header-description'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum doloribus saepe explicabo quibusdam culpa quam</p>
 
             <div className="search-bar">
+                🌴
                 <input
                     type="text"
-                    placeholder="🌴 Find a beach..."
+                    placeholder="Find a beach..."
                     onChange={handleSearch}
                     className="text-input"
                 />

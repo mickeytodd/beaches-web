@@ -14,6 +14,7 @@
     color: white;
     list-style-type: none;
     display: flex;
+    cursor: pointer;
 }
 
 .navLinks .navLink {
@@ -21,6 +22,6 @@
     padding: 15px;
 
     &:hover {
-        color: antiquewhite;
+        color: rgba(40, 13, 194, 0.664);
     }
 }
