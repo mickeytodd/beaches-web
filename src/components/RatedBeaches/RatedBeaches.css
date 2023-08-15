@@ -1,0 +1,9 @@
+.rated-beaches__cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.rated-beaches__title {
+    color: black;
+    text-transform: uppercase;
+}
