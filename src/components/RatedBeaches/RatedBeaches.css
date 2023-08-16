@@ -5,13 +5,16 @@
 
 
 .rated-beaches__cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    gap: 3rem;
+    margin: 5em;
 }
 
+.rated-beaches__cards::after {
+    content: '';
+    grid-column: 1;
+}
 
 
 .rated-beaches__title {
