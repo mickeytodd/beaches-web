@@ -22,9 +22,6 @@ h2 {
     font-size: 30px;
 }
 
-.header-description {
-    width: 30em;
-}
 
 
 .search-bar {
@@ -33,6 +30,12 @@ h2 {
     border-radius: 10em;
     margin: 1.2em 0;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+    min-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
 }
 
 .text-input {
@@ -40,7 +43,6 @@ h2 {
     border-radius: 20px;
     padding: 10px;
     outline: none;
-    width: 450px;
     font-size: 15px;
     color: rgb(65, 65, 65);
 
@@ -49,6 +51,7 @@ h2 {
 .search-button {
     background-color: #ff9900;
     color: white;
+    margin-left: auto;
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
@@ -62,5 +65,17 @@ h2 {
 
     &:hover {
         background-color: #e68a02;
+    }
+}
+
+
+@media only screen and (max-width:480px) {
+    .text-input {
+        font-size: smaller;
+        padding: 0;
+    }
+
+    .search-button {
+        width: auto;
     }
 }
