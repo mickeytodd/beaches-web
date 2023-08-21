@@ -1,11 +1,12 @@
 import React from 'react';
 import './SearchBar.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const SearchBar = ({ data }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredBeaches, setFilteredBeaches] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [selectedIndex, setSelectedIndex] = useState(-1);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleInputChange = (event) => {
@@ -18,6 +19,7 @@ const SearchBar = ({ data }) => {
         setFilteredBeaches(filtered);
         setInputValue(newInputValue);
         setIsDropdownOpen(newInputValue !== '');
+        setSelectedIndex(-1);
     };
 
     const handleInputBlur = () => {
@@ -25,12 +27,12 @@ const SearchBar = ({ data }) => {
     };
 
     const handleOutsideClick = (event) => {
-        if (event.target.id !== 'searchInput') {
+        if (!event.target.closest('.search-bar-wrapper')) {
             setIsDropdownOpen(false);
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         document.addEventListener('click', handleOutsideClick);
         return () => {
             document.removeEventListener('click', handleOutsideClick);
@@ -39,6 +41,23 @@ const SearchBar = ({ data }) => {
 
     const handleBeachSelect = (beach) => {
         console.log('Selected beach:', beach);
+        setIsDropdownOpen(false);
+    };
+
+    const handleKeyDown = (event) => {
+        if (isDropdownOpen) {
+            if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                setSelectedIndex(prevIndex =>
+                    prevIndex < filteredBeaches.length - 1 ? prevIndex + 1 : prevIndex
+                );
+            } else if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                setSelectedIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
+            } else if (event.key === 'Enter' && selectedIndex !== -1) {
+                handleBeachSelect(filteredBeaches[selectedIndex]);
+            }
+        }
     };
 
 
@@ -60,6 +79,7 @@ const SearchBar = ({ data }) => {
                         value={inputValue}
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
+                        onKeyDown={handleKeyDown}
                     />
                     <button className="search-button">Search</button>
                 </div>
@@ -67,10 +87,11 @@ const SearchBar = ({ data }) => {
                 {isDropdownOpen && (
                     <div className='dropdown-container' id='dropdown-container'>
                         <ul className='search-results'>
-                            {filteredBeaches.map(beach => (
+                            {filteredBeaches.map((beach, index) => (
                                 <li
                                     key={beach.id}
                                     onClick={() => handleBeachSelect(beach)}
+                                    className={index === selectedIndex ? 'selected' : ''}
                                 >
                                     {beach.title}
                                 </li>

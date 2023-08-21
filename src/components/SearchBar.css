@@ -32,6 +32,10 @@ h2 {
 
 }
 
+.selected {
+    background-color: #f0f0f0;
+}
+
 .search-bar-wrapper {
     background-color: white;
     padding: 10px;
