@@ -31,25 +31,29 @@ const SearchBar = ({ data }) => {
             <h2>Lorem ipsum dolor sit</h2>
             <p className='header-description'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum doloribus saepe explicabo quibusdam culpa quam</p>
 
-            <div className="search-bar">
-                🌴
-                <input
-                    type="text"
-                    placeholder="Find a beach..."
-                    onChange={handleSearchChange}
-                    className="text-input"
-                />
-                <button className="search-button">Search</button>
-                <ul className='search-results'>
-                    {filteredBeaches.map(beach => (
-                        <li
-                            key={beach.id}
-                            onClick={() => handleBeachSelect(beach)}
-                        >
-                            {beach.title}
-                        </li>
-                    ))}
-                </ul>
+            <div className='search-bar-wrapper'>
+                <div className="search-bar">
+                    🌴
+                    <input
+                        type="text"
+                        placeholder="Find a beach..."
+                        onChange={handleSearchChange}
+                        className="text-input"
+                    />
+                    <button className="search-button">Search</button>
+                </div>
+                <div>
+                    <ul className='search-results'>
+                        {filteredBeaches.map(beach => (
+                            <li
+                                key={beach.id}
+                                onClick={() => handleBeachSelect(beach)}
+                            >
+                                {beach.title}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
             <p>Lorem ipsum dolor sit amet</p>
 
