@@ -31,11 +31,13 @@ h2 {
     margin: 1.2em 0;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
     min-width: 70%;
-    display: flex;
     align-items: center;
+    display: flex;
+    position: relative;
 
 
 }
+
 
 .text-input {
     border: none;
@@ -64,6 +66,41 @@ h2 {
     &:hover {
         background-color: #e68a02;
     }
+}
+
+.search-results {
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+
+.search-results li {
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+
+
+.search-results li:hover {
+    background-color: #f2f2f2;
+}
+
+
+.search-results.hidden {
+    display: none;
 }
 
 

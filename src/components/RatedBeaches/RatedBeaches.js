@@ -25,6 +25,11 @@ const RatedBeaches = (props) => {
                     title={props.data[3].title}
                     amount={props.data[3].amount}
                     image={props.data[3].image} />
+                <RatedBeach
+                    title={props.data[4].title}
+                    amount={props.data[4].amount}
+                    image={props.data[4].image} />
+
 
             </div>
         </div>

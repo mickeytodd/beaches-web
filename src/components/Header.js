@@ -3,11 +3,11 @@ import Navbar from './Navbar';
 import SearchBar from './SearchBar';
 import './Header.css';
 
-const Header = ({ onSearch }) => {
+const Header = ({ data }) => {
     return (
         <header className='beachHeader'>
             <Navbar />
-            <SearchBar onSearch={onSearch} />
+            <SearchBar data={data} />
         </header>
     );
 };
