@@ -18,7 +18,7 @@ const SearchBar = ({ data }) => {
         );
         setFilteredBeaches(filtered);
         setInputValue(newInputValue);
-        setIsDropdownOpen(newInputValue !== '');
+        setIsDropdownOpen(newInputValue !== '' && filtered.length > 0);
         setSelectedIndex(-1);
     };
 
@@ -80,28 +80,30 @@ const SearchBar = ({ data }) => {
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
                         onKeyDown={handleKeyDown}
+                        autocomplete="off"
                     />
                     <button className="search-button">Search</button>
+
+
+                    {isDropdownOpen && (
+                        <div className='dropdown-container' id='dropdown-container'>
+                            <ul className='search-results'>
+                                {filteredBeaches.map((beach, index) => (
+                                    <li
+                                        key={beach.id}
+                                        onClick={() => handleBeachSelect(beach)}
+                                        className={index === selectedIndex ? 'selected' : ''}
+                                    >
+                                        {beach.title}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
 
-                {isDropdownOpen && (
-                    <div className='dropdown-container' id='dropdown-container'>
-                        <ul className='search-results'>
-                            {filteredBeaches.map((beach, index) => (
-                                <li
-                                    key={beach.id}
-                                    onClick={() => handleBeachSelect(beach)}
-                                    className={index === selectedIndex ? 'selected' : ''}
-                                >
-                                    {beach.title}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
             </div>
             <p>Lorem ipsum dolor sit amet</p>
-
         </div>
     );
 };

@@ -10,6 +10,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .header-title {
@@ -52,6 +53,7 @@ h2 {
     padding: 10px;
     outline: none;
     font-size: 15px;
+    width: 100%;
     color: rgb(65, 65, 65);
 
 }
@@ -77,16 +79,16 @@ h2 {
 
 .search-results {
     width: 100%;
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    margin: 0;
     background-color: white;
     border: 1px solid white;
     border-radius: 10px;
-    padding: 0;
-    margin: 0;
+    padding: 10px;
     list-style: none;
 }
-
-
-
 
 .search-results li {
     padding: 8px 10px;
