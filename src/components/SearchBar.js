@@ -68,7 +68,7 @@ const SearchBar = ({ data }) => {
             <h2>Lorem ipsum dolor sit</h2>
             <p className='header-description'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum doloribus saepe explicabo quibusdam culpa quam</p>
 
-            <div className='search-bar-wrapper'>
+            <div className={`search-bar-wrapper ${isDropdownOpen ? 'search-bar-wrapper-open' : 'search-bar-wrapper-closed'}`}>
                 <div className="search-bar">
                     🌴
                     <input
@@ -80,7 +80,7 @@ const SearchBar = ({ data }) => {
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}
                         onKeyDown={handleKeyDown}
-                        autocomplete="off"
+                        autoComplete="off"
                     />
                     <button className="search-button">Search</button>
 
@@ -104,7 +104,7 @@ const SearchBar = ({ data }) => {
 
             </div>
             <p>Lorem ipsum dolor sit amet</p>
-        </div>
+        </div >
     );
 };
 

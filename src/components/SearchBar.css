@@ -26,25 +26,16 @@ h2 {
 
 
 .search-bar {
-
-    align-items: center;
     display: flex;
+    align-items: center;
     position: relative;
-
 }
 
 .selected {
     background-color: #f0f0f0;
 }
 
-.search-bar-wrapper {
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 1.2em 0;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
-    min-width: 70%;
-}
+
 
 
 .text-input {
@@ -65,7 +56,6 @@ h2 {
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
-    width: 110px;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
@@ -77,17 +67,33 @@ h2 {
     }
 }
 
+.search-bar-wrapper {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    margin: 1.2em 0;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8);
+    min-width: 70%;
+    position: relative;
+}
+
+.search-bar-wrapper-open {
+    border-radius: 20px 20px 0 0;
+}
+
+
 .search-results {
     width: 100%;
     position: absolute;
     top: 100%;
     left: -10px;
-    margin: 0;
+    margin: 7px 0 0 0;
     background-color: white;
-    border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 0 0 20px 20px;
     padding: 10px;
     list-style: none;
+    box-shadow: 0 5px 5px rgba(52, 152, 219, 0.8);
+
 }
 
 .search-results li {
