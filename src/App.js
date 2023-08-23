@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from './components/Header';
-import RatedBeaches from './components/RatedBeaches/RatedBeaches';
-
+import Home from './components/Home';
 
 function App() {
 
@@ -71,9 +69,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header data={data} />
-      <RatedBeaches data={data} />
-
+      <Home data={data} />
     </div>
   );
 }
