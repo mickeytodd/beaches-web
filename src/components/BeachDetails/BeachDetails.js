@@ -1,22 +1,23 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import './BeachDetails.css';
 
-
-
-function BeachDetails({ data }) {
+const BeachDetails = ({ data }) => {
     const { id } = useParams();
-    const beach = data.find(beach => beach.id === id);
 
-    if (!beach) {
-        return <div>Beach not found.</div>;
-    }
+    const titleToShow = data.title || "Title Not Available";
+    const amountToShow = data.amount || "Amount Not Available";
+    console.log(titleToShow);
+    console.log(amountToShow);
 
     return (
         <div>
-            <h1>{beach.title}</h1>
-            <h2>Detalji</h2>
+            <h1 className='btitle'>{titleToShow}</h1>
+            <h2 className='bamount'>{amountToShow}</h2>
+            <h2>Nesto</h2>
         </div>
     );
 }
+
 
 export default BeachDetails;

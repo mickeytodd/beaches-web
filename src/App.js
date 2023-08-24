@@ -1,7 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BeachDetails from './components/BeachDetails/BeachDetails';
 import Home from './components/Home';
 
+
 function App() {
+
 
   const data = [
     {
@@ -69,7 +73,12 @@ function App() {
 
   return (
     <div className="App">
-      <Home data={data} />
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home data={data} />} />
+          <Route path="/beach-details/:id" element={<BeachDetails data={data} />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

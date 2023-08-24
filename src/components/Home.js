@@ -1,15 +1,15 @@
+import React from 'react'
 import Header from './Header';
 import RatedBeaches from './RatedBeaches/RatedBeaches';
 
 
-
-const Home = ({ data }) => {
+function Home({ data }) {
     return (
-        <div className="home">
+        <div>
             <Header data={data} />
             <RatedBeaches data={data} />
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Home

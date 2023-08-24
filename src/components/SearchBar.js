@@ -1,6 +1,8 @@
 import React from 'react';
 import './SearchBar.css';
 import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 const SearchBar = ({ data }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -8,6 +10,10 @@ const SearchBar = ({ data }) => {
     const [inputValue, setInputValue] = useState('');
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [selectedBeach, setSelectedBeach] = useState('');
+    const navigate = useNavigate();
+
+
 
     const handleInputChange = (event) => {
         const newInputValue = event.target.value.trim();
@@ -42,6 +48,9 @@ const SearchBar = ({ data }) => {
     const handleBeachSelect = (beach) => {
         console.log('Selected beach:', beach);
         setIsDropdownOpen(false);
+        navigate(`/beach-details/${beach.id}`);
+
+
     };
 
     const handleKeyDown = (event) => {
@@ -94,9 +103,12 @@ const SearchBar = ({ data }) => {
                                         onClick={() => handleBeachSelect(beach)}
                                         className={index === selectedIndex ? 'selected' : ''}
                                     >
-                                        {beach.title}
+                                        <Link to={`/beach-details/${beach.id}`}>
+                                            {beach.title}
+                                        </Link>
                                     </li>
                                 ))}
+
                             </ul>
                         </div>
                     )}
