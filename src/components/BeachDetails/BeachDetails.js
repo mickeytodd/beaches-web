@@ -5,16 +5,18 @@ import './BeachDetails.css';
 const BeachDetails = ({ data }) => {
     const { id } = useParams();
 
-    const titleToShow = data.title || "Title Not Available";
-    const amountToShow = data.amount || "Amount Not Available";
-    console.log(titleToShow);
-    console.log(amountToShow);
+    const beachDetails = data.find(beach => beach.id === id);
+
+    if (!beachDetails) {
+        return <div>Beach details not found</div>
+    }
+
 
     return (
         <div>
-            <h1 className='btitle'>{titleToShow}</h1>
-            <h2 className='bamount'>{amountToShow}</h2>
-            <h2>Nesto</h2>
+            <h1 className='nesto'>{beachDetails.title}</h1>
+            <h2 className='nesto'>{beachDetails.amount}</h2>
+            <h3 className='nesto'>{beachDetails.id}</h3>
         </div>
     );
 }
