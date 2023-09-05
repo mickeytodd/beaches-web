@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import './BeachDetails.css';
+import StarRating from './StarRating';
 
 const BeachDetails = ({ data }) => {
     const { id } = useParams();
@@ -14,9 +15,14 @@ const BeachDetails = ({ data }) => {
 
     return (
         <div>
-            <h1 className='nesto'>{beachDetails.title}</h1>
-            <h2 className='nesto'>{beachDetails.amount}</h2>
-            <h3 className='nesto'>{beachDetails.id}</h3>
+            <div className='beachDetailsHeader'>
+                <h1 className='beachTitle'>{beachDetails.title}</h1>
+                <div>
+                    <h1>Rate this product</h1>
+                    <StarRating totalStars={5} initialRating={3} />
+                </div>
+                <img className='beachDetailsImg' src={beachDetails.image} alt="" />
+            </div>
         </div>
     );
 }

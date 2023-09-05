@@ -1,3 +1,23 @@
-.nesto {
+.beachTitle {
     color: black;
+    margin-right: auto;
+}
+
+.beachAmount {
+    color: black;
+}
+
+.beachId {
+    color: black;
+}
+
+.beachDetailsImg {
+    width: 50%;
+    margin-right: auto;
+}
+
+.beachDetailsHeader {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px;
 }
