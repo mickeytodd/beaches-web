@@ -74,7 +74,7 @@ const SearchBar = ({ data }) => {
     return (
         <div className='header-wrapper'>
             <h1 className='header-title'>Lorem ipsum dolor sit amet</h1>
-            <h2>Lorem ipsum dolor sit</h2>
+            <h2 className='header-subtitle'>Lorem ipsum dolor sit</h2>
             <p className='header-description'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum doloribus saepe explicabo quibusdam culpa quam</p>
 
             <div className={`search-bar-wrapper ${isDropdownOpen ? 'search-bar-wrapper-open' : 'search-bar-wrapper-closed'}`}>
@@ -115,7 +115,7 @@ const SearchBar = ({ data }) => {
                 </div>
 
             </div>
-            <p>Lorem ipsum dolor sit amet</p>
+            <p className='headerNote'>Lorem ipsum dolor sit amet</p>
         </div >
     );
 };

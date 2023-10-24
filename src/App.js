@@ -4,7 +4,9 @@ import BeachDetails from './components/BeachDetails/BeachDetails';
 import Home from './components/Home';
 
 
+
 function App() {
+
 
 
   const data = [
@@ -69,6 +71,7 @@ function App() {
       amount: 270.95
     },
   ];
+
 
 
 
