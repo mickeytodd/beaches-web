@@ -1,86 +1,49 @@
-@font-face {
-    font-family: "poppins";
-    src: url("/src/assets/fonts/Poppins-Regular.ttf");
-}
-
-.beachTitle {
-    color: black;
-    margin-right: auto;
-}
-
-.beachAmount {
-    color: black;
-}
-
-.beachId {
-    color: black;
-}
-
-.beachDetailsImg {
-    width: 30%;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-    filter: brightness(0.9);
-}
-
-.beachDetailsHeader {
-    position: relative;
-}
-
-.beachDetailsHeader::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    filter: brightness(0.6);
-    z-index: -1;
-}
-
-
-.imgWithTitle {
-    position: relative;
-}
-
 .beachTitle {
     text-align: center;
-    background-color: rgb(255 255 255 / 71%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    padding: 1.3%;
-    border-radius: 7px;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-    color: #ff0000;
-    font-family: 'originalSurfer';
-    border: 1.8px solid white;
 }
 
-.rateTitle {
-    font-size: large;
-    font-weight: normal;
-    font-size: 30px;
-    text-transform: capitalize;
-}
-
-.starRating {
+.rating {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.starIcon {
+    height: 20px;
+    width: 20px;
+}
+
+
+
+.tabs {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+
+}
+
+li {
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #9e9e9e;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
-.sRating {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 35px;
+.tabs li.active {
+    color: #002fa1;
+}
+
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
 }
