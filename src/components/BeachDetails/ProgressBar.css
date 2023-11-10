@@ -6,6 +6,7 @@
 .progress-title {
     font-size: 14px;
     margin-right: 10px;
+    flex: 0 0 auto;
 
 }
 
@@ -13,13 +14,18 @@
     width: 20%;
 }
 
+.featureIcon img {
+    width: -webkit-fill-available;
+}
+
 .progress {
     background-color: #f1f1f1;
     height: 20px;
     position: relative;
-    width: 50%;
+    width: 100%;
     border-radius: 10px;
-    margin: 5px 8px;
+    margin: 5px 10px;
+    flex: 1;
 }
 
 .progress-fill {
@@ -27,7 +33,13 @@
     color: white;
     line-height: 20px;
     text-align: center;
-    width: 0;
+    width: calc(var(--percentage) * 1%);
     position: absolute;
     border-radius: 10px;
+}
+
+.progress-container {
+    width: 200px;
+    display: flex;
+    align-items: center;
 }

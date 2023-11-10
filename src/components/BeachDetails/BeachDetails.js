@@ -4,7 +4,8 @@ import './BeachDetails.css';
 import star from '../../assets/images/star.png';
 import jellyfish from '../../assets/images/icons8-jellyfish-66.png';
 import ProgressBar from './ProgressBar';
-
+import crowd from '../../assets/images/icons8-crowd-100.png';
+import cleanBeach from '../../assets/images/icons8-beach-100.png';
 
 const BeachDetails = ({ data }) => {
     const [activeTab, setActiveTab] = useState('Regular');
@@ -61,11 +62,32 @@ const BeachDetails = ({ data }) => {
                                 <img src={jellyfish} alt="jellyfish icon" />
                             </div>
                             <div className='featureBar'>
-                                <ProgressBar title="No Jellyfish" percentage={50} />
-                                <ProgressBar title="Few Jellyfish" percentage={75} />
+                                <ProgressBar title="No Jellyfish" percentage={30} />
+                                <ProgressBar title="Few Jellyfish" percentage={40} />
                                 <ProgressBar title="Lots Of Jellyfish" percentage={30} />
                             </div>
                         </div>
+                        <div className='featureBox'>
+                            <div className='featureIcon'>
+                                <img src={crowd} alt="crowd icon" />
+                            </div>
+                            <div className='featureBar'>
+                                <ProgressBar title="Not Crowded" percentage={40} />
+                                <ProgressBar title="A Bit Crowded" percentage={25} />
+                                <ProgressBar title="Very Crowded" percentage={35} />
+                            </div>
+                        </div>
+                        <div className='featureBox'>
+                            <div className='featureIcon'>
+                                <img src={cleanBeach} alt="clean beach icon" />
+                            </div>
+                            <div className='featureBar'>
+                                <ProgressBar title="Clean" percentage={30} />
+                                <ProgressBar title="A Bit Diry" percentage={45} />
+                                <ProgressBar title="Very Dirty" percentage={25} />
+                            </div>
+                        </div>
+
 
                     </div>
                     <div className={`content ${activeTab === 'Plus' ? 'active' : ''}`}>
