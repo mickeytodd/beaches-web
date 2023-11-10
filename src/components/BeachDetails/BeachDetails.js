@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BeachDetails.css';
 import star from '../../assets/images/star.png';
-
+import jellyfish from '../../assets/images/icons8-jellyfish-66.png';
+import ProgressBar from './ProgressBar';
 
 
 const BeachDetails = ({ data }) => {
@@ -22,8 +23,6 @@ const BeachDetails = ({ data }) => {
     }
 
 
-
-
     return (
         <div>
             <div>
@@ -33,7 +32,6 @@ const BeachDetails = ({ data }) => {
                     <p>4.6 (150 rates)</p>
                 </div>
             </div>
-
 
             <div className="tabsWrapper">
                 <ul className="tabs">
@@ -58,7 +56,17 @@ const BeachDetails = ({ data }) => {
                 </ul>
                 <div className="containerTabs">
                     <div className={`content ${activeTab === 'Regular' ? 'active' : ''}`}>
-                        Features
+                        <div className='featureBox'>
+                            <div className='featureIcon'>
+                                <img src={jellyfish} alt="jellyfish icon" />
+                            </div>
+                            <div className='featureBar'>
+                                <ProgressBar title="No Jellyfish" percentage={50} />
+                                <ProgressBar title="Few Jellyfish" percentage={75} />
+                                <ProgressBar title="Lots Of Jellyfish" percentage={30} />
+                            </div>
+                        </div>
+
                     </div>
                     <div className={`content ${activeTab === 'Plus' ? 'active' : ''}`}>
                         Images

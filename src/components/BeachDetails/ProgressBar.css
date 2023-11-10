@@ -1,0 +1,33 @@
+.progress-bar {
+    display: flex;
+    align-items: center;
+}
+
+.progress-title {
+    font-size: 14px;
+    margin-right: 10px;
+
+}
+
+.featureIcon {
+    width: 20%;
+}
+
+.progress {
+    background-color: #f1f1f1;
+    height: 20px;
+    position: relative;
+    width: 50%;
+    border-radius: 10px;
+    margin: 5px 8px;
+}
+
+.progress-fill {
+    background-color: #2f9b33;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+    width: 0;
+    position: absolute;
+    border-radius: 10px;
+}
