@@ -6,6 +6,7 @@ import jellyfish from '../../assets/images/icons8-jellyfish-66.png';
 import ProgressBar from './ProgressBar';
 import crowd from '../../assets/images/icons8-crowd-100.png';
 import cleanBeach from '../../assets/images/icons8-beach-100.png';
+import waterTemp from '../../assets/images/icons8-water-temperature-65.png';
 
 const BeachDetails = ({ data }) => {
     const [activeTab, setActiveTab] = useState('Regular');
@@ -26,11 +27,13 @@ const BeachDetails = ({ data }) => {
 
     return (
         <div>
-            <div>
-                <h1 className='beachTitle'>{beachDetails.title}</h1>
-                <div className='rating'>
-                    <img className='starIcon' src={star} alt="star icon" />
-                    <p>4.6 (150 rates)</p>
+            <div className='titleBox'>
+                <div className='titleWithRating'>
+                    <h1 className='beachTitle'>{beachDetails.title}</h1>
+                    <div className='rating'>
+                        <img className='starIcon' src={star} alt="star icon" />
+                        <p>4.6(150 rates)</p>
+                    </div>
                 </div>
             </div>
 
@@ -57,37 +60,118 @@ const BeachDetails = ({ data }) => {
                 </ul>
                 <div className="containerTabs">
                     <div className={`content ${activeTab === 'Regular' ? 'active' : ''}`}>
-                        <div className='featureBox'>
-                            <div className='featureIcon'>
-                                <img src={jellyfish} alt="jellyfish icon" />
-                            </div>
-                            <div className='featureBar'>
-                                <ProgressBar title="No Jellyfish" percentage={30} />
-                                <ProgressBar title="Few Jellyfish" percentage={40} />
-                                <ProgressBar title="Lots Of Jellyfish" percentage={30} />
-                            </div>
-                        </div>
-                        <div className='featureBox'>
-                            <div className='featureIcon'>
-                                <img src={crowd} alt="crowd icon" />
-                            </div>
-                            <div className='featureBar'>
-                                <ProgressBar title="Not Crowded" percentage={40} />
-                                <ProgressBar title="A Bit Crowded" percentage={25} />
-                                <ProgressBar title="Very Crowded" percentage={35} />
-                            </div>
-                        </div>
-                        <div className='featureBox'>
-                            <div className='featureIcon'>
-                                <img src={cleanBeach} alt="clean beach icon" />
-                            </div>
-                            <div className='featureBar'>
-                                <ProgressBar title="Clean" percentage={30} />
-                                <ProgressBar title="A Bit Diry" percentage={45} />
-                                <ProgressBar title="Very Dirty" percentage={25} />
-                            </div>
-                        </div>
 
+                        <div className='features'>
+                            <div className='featuresColumn'>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={jellyfish} alt="jellyfish icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="No Jellyfish" percentage={30} />
+                                        <ProgressBar title="Few Jellyfish" percentage={40} />
+                                        <ProgressBar title="Lots Of Jellyfish" percentage={30} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={crowd} alt="crowd icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Not Crowded" percentage={40} />
+                                        <ProgressBar title="A Bit Crowded" percentage={25} />
+                                        <ProgressBar title="Very Crowded" percentage={35} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={cleanBeach} alt="clean beach icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Clean" percentage={30} />
+                                        <ProgressBar title="A Bit Diry" percentage={45} />
+                                        <ProgressBar title="Very Dirty" percentage={25} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={waterTemp} alt="water temp icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Cold Water" percentage={30} />
+                                        <ProgressBar title="Moderately Warm" percentage={45} />
+                                        <ProgressBar title="Very Warm" percentage={25} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={cleanBeach} alt="clean beach icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Clean" percentage={30} />
+                                        <ProgressBar title="A Bit Diry" percentage={45} />
+                                        <ProgressBar title="Very Dirty" percentage={25} />
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div className='featuresColumn'>
+
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={crowd} alt="crowd icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Not Crowded" percentage={40} />
+                                        <ProgressBar title="A Bit Crowded" percentage={25} />
+                                        <ProgressBar title="Very Crowded" percentage={35} />
+                                    </div>
+                                </div>
+
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={cleanBeach} alt="clean beach icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Clean" percentage={30} />
+                                        <ProgressBar title="A Bit Diry" percentage={45} />
+                                        <ProgressBar title="Very Dirty" percentage={25} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={waterTemp} alt="water temp icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Cold Water" percentage={30} />
+                                        <ProgressBar title="Moderately Warm" percentage={45} />
+                                        <ProgressBar title="Very Warm" percentage={25} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={jellyfish} alt="jellyfish icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="No Jellyfish" percentage={30} />
+                                        <ProgressBar title="Few Jellyfish" percentage={40} />
+                                        <ProgressBar title="Lots Of Jellyfish" percentage={30} />
+                                    </div>
+                                </div>
+                                <div className='featureBox'>
+                                    <div className='featureIcon'>
+                                        <img src={waterTemp} alt="water temp icon" />
+                                    </div>
+                                    <div className='featureBar'>
+                                        <ProgressBar title="Cold Water" percentage={30} />
+                                        <ProgressBar title="Moderately Warm" percentage={45} />
+                                        <ProgressBar title="Very Warm" percentage={25} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <div className={`content ${activeTab === 'Plus' ? 'active' : ''}`}>
