@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BeachDetails.css';
+import BeachSlider from './BeachSlider';
 import star from '../../assets/images/star.png';
 import jellyfish from '../../assets/images/icons8-jellyfish-66.png';
 import ProgressBar from './ProgressBar';
@@ -175,7 +176,7 @@ const BeachDetails = ({ data }) => {
 
                     </div>
                     <div className={`content ${activeTab === 'Plus' ? 'active' : ''}`}>
-                        Images
+                        <BeachSlider />
                     </div>
                     <div className={`content ${activeTab === 'Premium' ? 'active' : ''}`}>
                         Comments
