@@ -1,6 +1,11 @@
-.beach-slider-container {
+.image-slider-container {
     width: 80%;
     margin: auto;
+}
+
+.top-image img {
+    width: 100%;
+    height: auto;
 }
 
 .image-row {
@@ -12,9 +17,11 @@
 .image-item {
     flex: 0 0 calc(30% - 20px);
     margin: 10px;
+    box-sizing: border-box;
 }
 
 .image-item img {
     width: 100%;
     height: auto;
+    display: block;
 }
