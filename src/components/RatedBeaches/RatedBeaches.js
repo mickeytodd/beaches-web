@@ -29,8 +29,6 @@ const RatedBeaches = (props) => {
                     title={props.data[4].title}
                     amount={props.data[4].amount}
                     image={props.data[4].image} />
-
-
             </div>
         </div>
     )

@@ -10,18 +10,14 @@
     font-size: 2em;
 }
 
-.navLinks {
-    color: white;
-    list-style-type: none;
-    display: flex;
-    cursor: pointer;
-}
 
-.navLinks .navLink {
-    font-size: 1.3em;
-    padding: 15px;
+@media only screen and (max-width: 640px) {
 
-    &:hover {
-        color: rgba(40, 13, 194, 0.664);
+    .beachNav {
+        padding: 2em;
+    }
+
+    .navLogo {
+        color: black;
     }
 }

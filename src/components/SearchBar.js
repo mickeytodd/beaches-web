@@ -2,7 +2,9 @@ import React from 'react';
 import './SearchBar.css';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import FilterButton from './FilterButton';
 
 const SearchBar = ({ data }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -12,7 +14,6 @@ const SearchBar = ({ data }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedBeach, setSelectedBeach] = useState('');
     const navigate = useNavigate();
-
 
 
     const handleInputChange = (event) => {
@@ -29,7 +30,9 @@ const SearchBar = ({ data }) => {
     };
 
     const handleInputBlur = () => {
-        setIsDropdownOpen(false);
+        setTimeout(() => {
+            setIsDropdownOpen(false);
+        }, 100);
     };
 
     const handleOutsideClick = (event) => {
@@ -45,13 +48,6 @@ const SearchBar = ({ data }) => {
         };
     }, []);
 
-    const handleBeachSelect = (beach) => {
-        console.log('Selected beach:', beach);
-        setIsDropdownOpen(false);
-        navigate(`/beach-details/${beach.id}`);
-
-
-    };
 
     const handleKeyDown = (event) => {
         if (isDropdownOpen) {
@@ -64,25 +60,26 @@ const SearchBar = ({ data }) => {
                 event.preventDefault();
                 setSelectedIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
             } else if (event.key === 'Enter' && selectedIndex !== -1) {
-                handleBeachSelect(filteredBeaches[selectedIndex]);
+                const selectedBeach = filteredBeaches[selectedIndex];
+                if (selectedBeach) {
+                    navigate(`/beach-details/${selectedBeach.id}`);
+                }
             }
         }
     };
 
 
-
     return (
         <div className='header-wrapper'>
-            <h1 className='header-title'>Lorem ipsum dolor sit amet</h1>
-            <h2 className='header-subtitle'>Lorem ipsum dolor sit</h2>
-            <p className='header-description'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum doloribus saepe explicabo quibusdam culpa quam</p>
-
+            <h1 className='header-title'>Find your perfect beach</h1>
             <div className={`search-bar-wrapper ${isDropdownOpen ? 'search-bar-wrapper-open' : 'search-bar-wrapper-closed'}`}>
                 <div className="search-bar">
-                    🌴
+                    <div className='search-bar__magnifying-glass'>
+                        <FontAwesomeIcon icon={faSearch} />
+                    </div>
                     <input
                         type="text"
-                        placeholder="Find a beach..."
+                        placeholder="Search..."
                         className="text-input"
                         id='searchInput'
                         value={inputValue}
@@ -91,19 +88,15 @@ const SearchBar = ({ data }) => {
                         onKeyDown={handleKeyDown}
                         autoComplete="off"
                     />
-                    <button className="search-button">Search</button>
-
-
                     {isDropdownOpen && (
                         <div className='dropdown-container' id='dropdown-container'>
                             <ul className='search-results'>
                                 {filteredBeaches.map((beach, index) => (
                                     <li
                                         key={beach.id}
-                                        onClick={() => handleBeachSelect(beach)}
                                         className={index === selectedIndex ? 'selected' : ''}
                                     >
-                                        <Link to={`/beach-details/${beach.id}`}>
+                                        <Link to={`/beach-details/${beach.id}`} onClick={() => setIsDropdownOpen(false)}>
                                             {beach.title}
                                         </Link>
                                     </li>
@@ -113,9 +106,7 @@ const SearchBar = ({ data }) => {
                         </div>
                     )}
                 </div>
-
             </div>
-            <p className='headerNote'>Lorem ipsum dolor sit amet</p>
         </div >
     );
 };
