@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import FilterButton from './FilterButton';
+
+import FilterOptions from './FilterOptions';
 
 const SearchBar = ({ data }) => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -13,6 +14,7 @@ const SearchBar = ({ data }) => {
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedBeach, setSelectedBeach] = useState('');
+    const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
     const navigate = useNavigate();
 
 
@@ -48,7 +50,6 @@ const SearchBar = ({ data }) => {
         };
     }, []);
 
-
     const handleKeyDown = (event) => {
         if (isDropdownOpen) {
             if (event.key === 'ArrowDown') {
@@ -68,6 +69,14 @@ const SearchBar = ({ data }) => {
         }
     };
 
+
+    const handleFilterButtonClick = () => {
+        setIsFilterMenuOpen(!isFilterMenuOpen);
+    };
+
+    const handleFilterChange = (filter) => {
+        console.log('Selected filter:', filter);
+    };
 
     return (
         <div className='header-wrapper'>
@@ -95,18 +104,30 @@ const SearchBar = ({ data }) => {
                                     <li
                                         key={beach.id}
                                         className={index === selectedIndex ? 'selected' : ''}
+                                        onClick={() => navigate(`/beach-details/${beach.id}`)}
                                     >
-                                        <Link to={`/beach-details/${beach.id}`} onClick={() => setIsDropdownOpen(false)}>
+                                        <Link
+                                            to={`/beach-details/${beach.id}`}
+                                            onClick={(e) => e.preventDefault()}
+                                        >
                                             {beach.title}
                                         </Link>
                                     </li>
                                 ))}
-
                             </ul>
                         </div>
                     )}
                 </div>
             </div>
+            <button className='filter-button' onClick={handleFilterButtonClick}>
+                Filters
+            </button>
+            {isFilterMenuOpen && (
+                <FilterOptions
+                    onFilterChange={handleFilterChange}
+                    filters={['Location', 'Rating', 'Type']}
+                />
+            )}
         </div >
     );
 };
