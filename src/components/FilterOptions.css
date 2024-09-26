@@ -6,7 +6,6 @@
 .filter-button {
     margin-left: 10px;
     background-color: #007bff;
-    /* Blue color for the button */
     color: white;
     border: none;
     border-radius: 4px;
@@ -18,7 +17,6 @@
 
 .filter-button:hover {
     background-color: #0056b3;
-    /* Darker blue on hover */
 }
 
 .filter-button svg {

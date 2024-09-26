@@ -57,7 +57,7 @@ const BeachDetails = ({ data }) => {
                 </ul>
                 <div className="beach-details__tab-container">
                     <div className={`beach-details__tab-content ${activeTab === 'Features' ? 'active' : ''}`}>
-                        <p>Type: Family</p>
+                        <p>Type: {beachDetails.type}</p>
                         <p>Activities: Surfing, Scuba Diving, Windsurfing, Romantic Diner, Camp on the beach </p>
                         <p>Facilities: Restrooms, Showers, Changing Rooms, Playgrounds, Water Sport Rentals, Volleyball court, First Aid Station, Beach Bars, Restaurants, Cafe, Lifeguard Stations, Parking</p>
                         <p>Events: Beach Wedding, Beach Party, Volleyball Tournament, Movie Night, Music Festival, Fitness Classes, Food and Drink festival</p>

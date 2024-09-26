@@ -17,19 +17,20 @@ const SearchBar = ({ data }) => {
     const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
     const navigate = useNavigate();
 
-
     const handleInputChange = (event) => {
         const newInputValue = event.target.value.trim();
-        const newSearchTerm = event.target.value;
-        setSearchTerm(newSearchTerm);
+        setSearchTerm(newInputValue);
+
         const filtered = data.filter(beach =>
-            beach.title.toLowerCase().includes(newSearchTerm.toLowerCase())
+            beach.title.toLowerCase().includes(newInputValue.toLowerCase()) ||
+            beach.location.toLowerCase().includes(newInputValue.toLowerCase())
         );
         setFilteredBeaches(filtered);
         setInputValue(newInputValue);
         setIsDropdownOpen(newInputValue !== '' && filtered.length > 0);
         setSelectedIndex(-1);
     };
+
 
     const handleInputBlur = () => {
         setTimeout(() => {
@@ -50,22 +51,37 @@ const SearchBar = ({ data }) => {
         };
     }, []);
 
+
     const handleKeyDown = (event) => {
-        if (isDropdownOpen) {
-            if (event.key === 'ArrowDown') {
-                event.preventDefault();
-                setSelectedIndex(prevIndex =>
-                    prevIndex < filteredBeaches.length - 1 ? prevIndex + 1 : prevIndex
-                );
-            } else if (event.key === 'ArrowUp') {
-                event.preventDefault();
-                setSelectedIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
-            } else if (event.key === 'Enter' && selectedIndex !== -1) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            if (selectedIndex >= 0 && selectedIndex < filteredBeaches.length) {
                 const selectedBeach = filteredBeaches[selectedIndex];
-                if (selectedBeach) {
-                    navigate(`/beach-details/${selectedBeach.id}`);
+                navigate(`/beach-details/${selectedBeach.id}`);
+            } else {
+                const trimmedSearchTerm = searchTerm.trim().toLowerCase();
+
+                const locationMatch = data.find(beach => {
+                    const locationWords = beach.location.toLowerCase().split(/[\s,]+/);
+                    return locationWords.includes(trimmedSearchTerm);
+                });
+
+                if (locationMatch) {
+                    navigate(`/location/${trimmedSearchTerm}`);
+                } else {
+                    navigate(`/location/${trimmedSearchTerm}`);
+                    console.log('No matching location found.');
                 }
             }
+
+        } else if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            setSelectedIndex(prevIndex =>
+                prevIndex < filteredBeaches.length - 1 ? prevIndex + 1 : prevIndex
+            );
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            setSelectedIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : prevIndex));
         }
     };
 
@@ -111,6 +127,7 @@ const SearchBar = ({ data }) => {
                                             onClick={(e) => e.preventDefault()}
                                         >
                                             {beach.title}
+                                            <p className='search-bar__location'>{beach.location}</p>
                                         </Link>
                                     </li>
                                 ))}
