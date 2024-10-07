@@ -13,7 +13,11 @@ function App() {
       title: 'Saud Beach',
       location: 'Pagudpud, Ilocos Norte, Philippines',
       amount: 94.12,
-      type: "Pebble Beach"
+      type: "Pebble Beach",
+      activities: "Swimming, Surfing, Snorkeling, Paddleboarding",
+      facilities: "Lifeguard, Shower, First Aid Station",
+      accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      rating: 4.6
     },
     {
       id: 'b2',
@@ -21,7 +25,11 @@ function App() {
       title: 'Elafonissi Beach',
       location: 'Crete, Greece',
       amount: 799.49,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Swimming, Snorkeling, Scuba Diving",
+      facilities: "Lifeguard, Shower, Changing Room",
+      accessibilities: "Wheelchair Accessibility",
+      rating: 3.8
     },
     {
       id: 'b3',
@@ -29,7 +37,11 @@ function App() {
       title: 'Nungwi Beach',
       location: 'Zanzibar',
       amount: 294.67,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Swimming, Surfing, Kayaking, Jet Skiing, Windsurfing",
+      facilities: "Shower, Changing Room, First Aid Station",
+      accessibilities: "Accessible Parking",
+      rating: 2.9
     },
     {
       id: 'b4',
@@ -37,7 +49,11 @@ function App() {
       title: 'Hanalei Bay',
       location: 'Kauaʻi island, Hawaii',
       amount: 450,
-      type: "Rocky Beach"
+      type: "Rocky Beach",
+      activities: "Swimming, Snorkeling, Jet Skiing",
+      facilities: "Restroom, Shower, Lifeguard",
+      accessibilities: "Wheelchair Accessibility",
+      rating: 3
     },
     {
       id: 'b5',
@@ -45,7 +61,11 @@ function App() {
       title: 'Copacabana',
       location: 'Rio de Janeiro, Brazil',
       amount: 145.45,
-      type: "Rocky Beach"
+      type: "Rocky Beach",
+      activities: "Swimming, Scuba Diving, Paddleboarding",
+      facilities: "Restroom, Shower, Changing Room",
+      accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      rating: 5
     },
     {
       id: 'b6',
@@ -53,7 +73,11 @@ function App() {
       title: 'Cape Le Grand National Par',
       location: 'Cape Le Grand Rd, Cape Le Grand WA 6450, Australia',
       amount: 500.25,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Snorkeling, Surfing, Kayaking, Jet Skiing, Boat Tours, Picnicking",
+      facilities: "Restroom, Shower, Changing Room",
+      accessibilities: "Accessible Parking",
+      rating: 4.9
     },
     {
       id: 'b7',
@@ -61,7 +85,11 @@ function App() {
       title: 'Grayton Beach',
       location: 'Florida',
       amount: 79.89,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Swimming, Paddleboarding, Kayaking",
+      facilities: "Restroom, Shower, Changing Room",
+      accessibilities: "Wheelchair Accessibility",
+      rating: 3.7
     },
     {
       id: 'b8',
@@ -69,7 +97,11 @@ function App() {
       title: 'Sotavento Beach',
       location: 'Fuerteventura, Spain',
       amount: 450.50,
-      type: "Pebble Beach"
+      type: "Pebble Beach",
+      activities: "Swimming, Surfing, Scuba Diving, Windsurfing, Beach Volleyball",
+      facilities: "Restroom, Shower, Lifeguard",
+      accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      rating: 4.1
     },
     {
       id: 'b9',
@@ -77,7 +109,11 @@ function App() {
       title: 'Cannon Beach',
       location: 'Oregon, United States',
       amount: 150,
-      type: "Rocky Beach"
+      type: "Rocky Beach",
+      activities: "Swimming, Snorkeling, Jet Skiing, Fishing",
+      facilities: "Restroom, Shower, Changing Room",
+      accessibilities: "Wheelchair Accessibility",
+      rating: 4
     },
     {
       id: 'b10',
@@ -85,7 +121,11 @@ function App() {
       title: 'Le Morne',
       location: 'Mauritius Island',
       amount: 270.95,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Swimming, Surfing, Kayaking, Windsurfing, Picnicking",
+      facilities: "Restroom, Shower, Lifeguard",
+      accessibilities: "Accessible Parking",
+      rating: 4.3
     },
     {
       id: 'b11',
@@ -93,7 +133,11 @@ function App() {
       title: 'Falassarna Beach',
       location: 'Crete, Greece',
       amount: 799.49,
-      type: "Pebble Beach"
+      type: "Pebble Beach",
+      activities: "Swimming, Snorkeling, Paddleboarding, Sunbathing",
+      facilities: "Restroom, Shower, Changing Room, Lifeguard",
+      accessibilities: "Wheelchair Accessibility",
+      rating: 4.8
     },
     {
       id: 'b12',
@@ -101,7 +145,11 @@ function App() {
       title: 'Banana Beach',
       location: 'Vasilikou, Zakynthos, Greece',
       amount: 80.49,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Scuba Diving, Kayaking, Jet Skiing, Sunbathing, Camping",
+      facilities: "Restroom, First Aid Station, Changing Room",
+      accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      rating: 5
     },
     {
       id: 'b13',
@@ -109,7 +157,11 @@ function App() {
       title: 'Balos Beach',
       location: 'Chania, Crete, Greece',
       amount: 146,
-      type: "Rocky Beach"
+      type: "Rocky Beach",
+      activities: "Swimming, Paddleboarding, Jet Skiing, Windsurfing, Boat Tours, Beach Volleyball, Sunbathing",
+      facilities: "Restroom, Shower, Changing Room",
+      accessibilities: "Accessible Parking",
+      rating: 4.3
     },
     {
       id: 'b14',
@@ -117,7 +169,11 @@ function App() {
       title: 'Navagio Beach',
       location: 'Zakynthos, Greece',
       amount: 296.70,
-      type: "Sandy Beach"
+      type: "Sandy Beach",
+      activities: "Swimming, Surfing, Snorkeling, Scuba Diving, Kayaking, Paddleboarding, Boat Tours, Picnicking, Sunbathing, Camping",
+      facilities: "Lifeguard, First Aid Station",
+      accessibilities: "Accessible Parking",
+      rating: 4.8
     },
     {
       id: 'b15',
@@ -125,7 +181,11 @@ function App() {
       title: 'Houlakia Beach',
       location: 'Mykonos, Greece',
       amount: 261.70,
-      type: "Pebble Beach"
+      type: "Pebble Beach",
+      activities: "Swimming, Surfing, Scuba Diving, Jet Skiing, Jet Skiing, Fishing, Beach Volleyball, Sunbathing",
+      facilities: "Restroom, Shower, Changing Room, Lifeguard",
+      accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      rating: 3.5
     },
   ];
 

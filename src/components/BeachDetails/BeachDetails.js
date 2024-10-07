@@ -29,7 +29,7 @@ const BeachDetails = ({ data }) => {
                     <p className='beach-details__beach-location'>{beachDetails.location}</p>
                     <div className="beach-details__rating-container">
                         <img className="beach-details__star-icon" src={star} alt="star icon" />
-                        <p className="beach-details__rating-text">4.6 (150 rates)</p>
+                        <p className="beach-details__rating-text">{beachDetails.review} (150 rates)</p>
                     </div>
                 </div>
             </div>

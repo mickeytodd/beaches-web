@@ -9,7 +9,9 @@ const BeachesByLocation = ({ data }) => {
     const { location } = useParams();
     const navigate = useNavigate();
     const [selectedTypes, setSelectedTypes] = useState([]);
-
+    const [selectedActivities, setSelectedActivities] = useState([]);
+    const [selectedFacilities, setSelectedFacilities] = useState([]);
+    const [selectedAccessibilities, setSelectedAccessibilities] = useState([]);
 
     const trimmedLocation = location.trim().toLowerCase();
 
@@ -19,8 +21,14 @@ const BeachesByLocation = ({ data }) => {
     });
 
     const filteredBeachesByType = filteredBeaches.filter(beach => {
-        return selectedTypes.length === 0 || selectedTypes.includes(beach.type);
+        const hasSelectedTypes = selectedTypes.length === 0 || selectedTypes.includes(beach.type);
+        const hasSelectedActivities = selectedActivities.length === 0 || selectedActivities.every(activity => beach.activities.split(', ').includes(activity));
+        const hasSelectedFacilities = selectedFacilities.length === 0 || selectedFacilities.every(facility => beach.facilities.split(', ').includes(facility));
+        const hasSelectedAccessibilities = selectedAccessibilities.length === 0 || selectedAccessibilities.every(accessibility => beach.accessibilities.split(', ').includes(accessibility));
+
+        return hasSelectedTypes && hasSelectedActivities && hasSelectedFacilities && hasSelectedAccessibilities;
     });
+
 
     const capitalizeLocation = (location) => {
         return location
@@ -30,8 +38,11 @@ const BeachesByLocation = ({ data }) => {
             .join(' ');
     };
 
-    const handleFilterChange = (types) => {
+    const handleFilterChange = (types, activities, facilities, accessibilities) => {
         setSelectedTypes(types);
+        setSelectedActivities(activities);
+        setSelectedFacilities(facilities);
+        setSelectedAccessibilities(accessibilities)
     };
 
     const handleBeachClick = (beachId) => {
@@ -40,14 +51,20 @@ const BeachesByLocation = ({ data }) => {
 
     return (
         <div className='beaches-location'>
-            <h1 className='beaches-location__title'>Beaches in {capitalizeLocation(location)}</h1>
             <div>
+                <h3>Filters</h3>
                 <BeachFilter
                     types={["Sandy Beach", "Pebble Beach", "Rocky Beach"]}
+                    activities={["Swimming", "Surfing", "Snorkeling", "Scuba Diving", "Kayaking", "Paddleboarding", "Jet Skiing", "Windsurfing", "Fishing",
+                        "Boat Tours", "Beach Volleyball", "Picnicking", "Camping"
+                    ]}
+                    facilities={["Restroom", "Shower", "Changing Room", "Lifeguard", "First Aid Station"]}
+                    accessibilities={["Wheelchair Accessibility", "Accessible Parking", "Boardwalks or Ramps to the Beach"]}
                     onFilter={handleFilterChange}
                 />
             </div>
             <ul className="beaches-location__list">
+                <h1 className='beaches-location__title'>Beaches in {capitalizeLocation(location)}</h1>
                 {filteredBeachesByType.length > 0 ? (
                     filteredBeachesByType.map(beach => (
                         <li className="beaches-location__item" key={beach.id} onClick={() => handleBeachClick(beach.id)}>
@@ -61,7 +78,7 @@ const BeachesByLocation = ({ data }) => {
                                         <p className='beach-card__location'>{beach.location}</p>
                                         <div className="beach-details__rating-container">
                                             <img className="beach-details__star-icon" src={star} alt="star icon" />
-                                            <p className="beach-details__rating-text">4.6 (150 rates)</p>
+                                            <p className="beach-details__rating-text">{beach.rating} (150 rates)</p>
                                         </div>
                                     </div>
                                 </div>
