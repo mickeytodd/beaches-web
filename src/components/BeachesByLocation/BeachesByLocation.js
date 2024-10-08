@@ -12,6 +12,7 @@ const BeachesByLocation = ({ data }) => {
     const [selectedActivities, setSelectedActivities] = useState([]);
     const [selectedFacilities, setSelectedFacilities] = useState([]);
     const [selectedAccessibilities, setSelectedAccessibilities] = useState([]);
+    const [selectedRestaurants, setSelectedRestaurants] = useState([]);
 
     const trimmedLocation = location.trim().toLowerCase();
 
@@ -25,8 +26,10 @@ const BeachesByLocation = ({ data }) => {
         const hasSelectedActivities = selectedActivities.length === 0 || selectedActivities.every(activity => beach.activities.split(', ').includes(activity));
         const hasSelectedFacilities = selectedFacilities.length === 0 || selectedFacilities.every(facility => beach.facilities.split(', ').includes(facility));
         const hasSelectedAccessibilities = selectedAccessibilities.length === 0 || selectedAccessibilities.every(accessibility => beach.accessibilities.split(', ').includes(accessibility));
+        const hasSelectedRestaurants = selectedRestaurants.length === 0 || selectedRestaurants.every(food => beach.restaurants.split(', ').includes(food));
 
-        return hasSelectedTypes && hasSelectedActivities && hasSelectedFacilities && hasSelectedAccessibilities;
+        return hasSelectedTypes && hasSelectedActivities && hasSelectedFacilities && hasSelectedAccessibilities && hasSelectedRestaurants;
+
     });
 
 
@@ -38,11 +41,12 @@ const BeachesByLocation = ({ data }) => {
             .join(' ');
     };
 
-    const handleFilterChange = (types, activities, facilities, accessibilities) => {
+    const handleFilterChange = (types, activities, facilities, accessibilities, restaurants) => {
         setSelectedTypes(types);
         setSelectedActivities(activities);
         setSelectedFacilities(facilities);
-        setSelectedAccessibilities(accessibilities)
+        setSelectedAccessibilities(accessibilities);
+        setSelectedRestaurants(restaurants);
     };
 
     const handleBeachClick = (beachId) => {
@@ -51,8 +55,8 @@ const BeachesByLocation = ({ data }) => {
 
     return (
         <div className='beaches-location'>
-            <div>
-                <h3>Filters</h3>
+            <div className='filters-wrapper'>
+                <h3 className='filter-title'>Filters</h3>
                 <BeachFilter
                     types={["Sandy Beach", "Pebble Beach", "Rocky Beach"]}
                     activities={["Swimming", "Surfing", "Snorkeling", "Scuba Diving", "Kayaking", "Paddleboarding", "Jet Skiing", "Windsurfing", "Fishing",
@@ -60,6 +64,7 @@ const BeachesByLocation = ({ data }) => {
                     ]}
                     facilities={["Restroom", "Shower", "Changing Room", "Lifeguard", "First Aid Station"]}
                     accessibilities={["Wheelchair Accessibility", "Accessible Parking", "Boardwalks or Ramps to the Beach"]}
+                    restaurants={["Beachfront Restaurants or Cafés", "Snack Stands or Food Trucks", "Ice Cream Stands"]}
                     onFilter={handleFilterChange}
                 />
             </div>

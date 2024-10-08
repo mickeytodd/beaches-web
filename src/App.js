@@ -17,6 +17,7 @@ function App() {
       activities: "Swimming, Surfing, Snorkeling, Paddleboarding",
       facilities: "Lifeguard, Shower, First Aid Station",
       accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 4.6
     },
     {
@@ -29,6 +30,7 @@ function App() {
       activities: "Swimming, Snorkeling, Scuba Diving",
       facilities: "Lifeguard, Shower, Changing Room",
       accessibilities: "Wheelchair Accessibility",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 3.8
     },
     {
@@ -41,6 +43,7 @@ function App() {
       activities: "Swimming, Surfing, Kayaking, Jet Skiing, Windsurfing",
       facilities: "Shower, Changing Room, First Aid Station",
       accessibilities: "Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 2.9
     },
     {
@@ -53,6 +56,7 @@ function App() {
       activities: "Swimming, Snorkeling, Jet Skiing",
       facilities: "Restroom, Shower, Lifeguard",
       accessibilities: "Wheelchair Accessibility",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 3
     },
     {
@@ -65,6 +69,7 @@ function App() {
       activities: "Swimming, Scuba Diving, Paddleboarding",
       facilities: "Restroom, Shower, Changing Room",
       accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 5
     },
     {
@@ -77,6 +82,7 @@ function App() {
       activities: "Snorkeling, Surfing, Kayaking, Jet Skiing, Boat Tours, Picnicking",
       facilities: "Restroom, Shower, Changing Room",
       accessibilities: "Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 4.9
     },
     {
@@ -89,6 +95,7 @@ function App() {
       activities: "Swimming, Paddleboarding, Kayaking",
       facilities: "Restroom, Shower, Changing Room",
       accessibilities: "Wheelchair Accessibility",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 3.7
     },
     {
@@ -101,6 +108,7 @@ function App() {
       activities: "Swimming, Surfing, Scuba Diving, Windsurfing, Beach Volleyball",
       facilities: "Restroom, Shower, Lifeguard",
       accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 4.1
     },
     {
@@ -113,6 +121,7 @@ function App() {
       activities: "Swimming, Snorkeling, Jet Skiing, Fishing",
       facilities: "Restroom, Shower, Changing Room",
       accessibilities: "Wheelchair Accessibility",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 4
     },
     {
@@ -125,6 +134,7 @@ function App() {
       activities: "Swimming, Surfing, Kayaking, Windsurfing, Picnicking",
       facilities: "Restroom, Shower, Lifeguard",
       accessibilities: "Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks, Ice Cream Stands",
       rating: 4.3
     },
     {
@@ -137,6 +147,7 @@ function App() {
       activities: "Swimming, Snorkeling, Paddleboarding, Sunbathing",
       facilities: "Restroom, Shower, Changing Room, Lifeguard",
       accessibilities: "Wheelchair Accessibility",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks",
       rating: 4.8
     },
     {
@@ -149,6 +160,7 @@ function App() {
       activities: "Scuba Diving, Kayaking, Jet Skiing, Sunbathing, Camping",
       facilities: "Restroom, First Aid Station, Changing Room",
       accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Snack Stands or Food Trucks",
       rating: 5
     },
     {
@@ -161,6 +173,7 @@ function App() {
       activities: "Swimming, Paddleboarding, Jet Skiing, Windsurfing, Boat Tours, Beach Volleyball, Sunbathing",
       facilities: "Restroom, Shower, Changing Room",
       accessibilities: "Accessible Parking",
+      restaurants: "Beachfront Restaurants or Cafés, Ice Cream Stands",
       rating: 4.3
     },
     {
@@ -173,6 +186,7 @@ function App() {
       activities: "Swimming, Surfing, Snorkeling, Scuba Diving, Kayaking, Paddleboarding, Boat Tours, Picnicking, Sunbathing, Camping",
       facilities: "Lifeguard, First Aid Station",
       accessibilities: "Accessible Parking",
+      restaurants: "",
       rating: 4.8
     },
     {
@@ -185,6 +199,7 @@ function App() {
       activities: "Swimming, Surfing, Scuba Diving, Jet Skiing, Jet Skiing, Fishing, Beach Volleyball, Sunbathing",
       facilities: "Restroom, Shower, Changing Room, Lifeguard",
       accessibilities: "Wheelchair Accessibility, Accessible Parking",
+      restaurants: "Ice Cream Stands",
       rating: 3.5
     },
   ];

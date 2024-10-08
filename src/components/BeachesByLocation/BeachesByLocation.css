@@ -1,16 +1,19 @@
 .beaches-location {
     display: flex;
-    justify-content: space-around;
+    gap: 20;
+    padding: 20px;
 }
 
 .beaches-location__item {
     list-style-type: none;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .beaches-location__title {
     text-align: center;
-    font-size: 3em;
-    padding: 50px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .beach-card {
@@ -20,6 +23,7 @@
     border-radius: 8px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .beach-card__title {
@@ -28,6 +32,10 @@
     margin: 0;
     color: #333;
     text-align: center;
+}
+
+.beaches-location__list {
+    flex-grow: 1;
 }
 
 .beach-card__location {
@@ -68,4 +76,11 @@
 .beaches-location__no-results {
     padding: 30px;
     text-transform: capitalize;
+}
+
+.filter-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    padding: 20px;
 }

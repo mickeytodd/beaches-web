@@ -1,3 +1,64 @@
 .type-wrapper {
     padding: 0 20px 20px 20px;
 }
+
+.filter-wrapper {
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.activity-wrapper {
+    padding: 0 20px 20px 20px;
+}
+
+.facility-wrapper {
+    padding: 0 20px 20px 20px;
+}
+
+.accessibility-wrapper {
+    padding: 0 20px 20px 20px;
+}
+
+.food-wrapper {
+    padding: 0 20px 20px 20px;
+}
+
+.type-wrapper,
+.activity-wrapper,
+.facility-wrapper,
+.accessibility-wrapper,
+.food-wrapper {
+    margin-bottom: 20px;
+}
+
+.option-title {
+    color: #3d454d;
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #3d454d;
+    margin-left: 10px;
+}
+
+.toggle-button:hover {
+    color: #0056b3;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.filter-option {
+    color: #424242;
+}
