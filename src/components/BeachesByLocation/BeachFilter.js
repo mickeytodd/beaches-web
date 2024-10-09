@@ -37,30 +37,35 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
     return (
         <div className='filter-wrapper'>
             <div className='type-wrapper'>
-                <h4 className='option-title'>
+                <h4 className={`option-title ${isTypeOpen ? 'active' : ''}`}>
                     Type
-                    <button className="toggle-button" onClick={() => toggleSection(isTypeOpen, setIsTypeOpen)}>
+                    <button
+                        className="toggle-button"
+                        onClick={() => toggleSection(isTypeOpen, setIsTypeOpen)}
+                    >
                         {isTypeOpen ? '-' : '+'}
                     </button>
                 </h4>
-                {isTypeOpen && (
-                    <div className='filter-options'>
-                        {types.map((type) => (
-                            <div key={type}>
-                                <input
-                                    type="checkbox"
-                                    id={type}
-                                    value={type}
-                                    onChange={() =>
-                                        handleCheckboxChange(type, setSelectedTypes, selectedTypes)
-                                    }
-                                />
-                                <label className='filter-option' htmlFor={type}>{type}</label>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </div>
+                {
+                    isTypeOpen && (
+                        <div className='filter-options'>
+                            {types.map((type) => (
+                                <div className='options-wrapper' key={type}>
+                                    <input
+                                        type="checkbox"
+                                        id={type}
+                                        value={type}
+                                        onChange={() =>
+                                            handleCheckboxChange(type, setSelectedTypes, selectedTypes)
+                                        }
+                                    />
+                                    <label className='filter-option' htmlFor={type}>{type}</label>
+                                </div>
+                            ))}
+                        </div>
+                    )
+                }
+            </div >
 
             <div className='activity-wrapper'>
                 <h4 className='option-title'>
@@ -165,7 +170,7 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 
