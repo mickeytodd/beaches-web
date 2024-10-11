@@ -35,31 +35,32 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
     };
 
     return (
-        <div className='filter-wrapper'>
-            <div className='type-wrapper'>
-                <h4 className={`option-title ${isTypeOpen ? 'active' : ''}`}>
+        <div className='beach-filter'>
+            <div className='beach-filter__section'>
+                <h4 className={`beach-filter__title ${isTypeOpen ? 'active' : ''}`}
+                    onClick={() => toggleSection(isTypeOpen, setIsTypeOpen)}>
                     Type
                     <button
-                        className="toggle-button"
-                        onClick={() => toggleSection(isTypeOpen, setIsTypeOpen)}
+                        className="beach-filter__toggle-button"
                     >
                         {isTypeOpen ? '-' : '+'}
                     </button>
                 </h4>
                 {
                     isTypeOpen && (
-                        <div className='filter-options'>
+                        <div className='beach-filter__options'>
                             {types.map((type) => (
-                                <div className='options-wrapper' key={type}>
+                                <div className='beach-filter__option' key={type}>
                                     <input
                                         type="checkbox"
+                                        className='beach-filter__checkbox'
                                         id={type}
                                         value={type}
                                         onChange={() =>
                                             handleCheckboxChange(type, setSelectedTypes, selectedTypes)
                                         }
                                     />
-                                    <label className='filter-option' htmlFor={type}>{type}</label>
+                                    <label className='beach-filter__label' htmlFor={type}>{type}</label>
                                 </div>
                             ))}
                         </div>
@@ -67,104 +68,112 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                 }
             </div >
 
-            <div className='activity-wrapper'>
-                <h4 className='option-title'>
+            <div className='beach-filter__section'>
+                <h4 className='beach-filter__title'
+                    onClick={() => toggleSection(isActivityOpen, setIsActivityOpen)}>
                     Activities
-                    <button className="toggle-button" onClick={() => toggleSection(isActivityOpen, setIsActivityOpen)}>
+                    <button className="beach-filter__toggle-button">
                         {isActivityOpen ? '-' : '+'}
                     </button>
                 </h4>
                 {isActivityOpen && (
-                    <div className='filter-options'>
+                    <div className='beach-filter__options'>
                         {activities.map((activity) => (
-                            <div key={activity}>
+                            <div className='beach-filter__option' key={activity}>
                                 <input
                                     type="checkbox"
+                                    className='beach-filter__checkbox'
                                     id={activity}
                                     value={activity}
                                     onChange={() =>
                                         handleCheckboxChange(activity, setSelectedActivities, selectedActivities)
                                     }
                                 />
-                                <label className='filter-option' htmlFor={activity}>{activity}</label>
+                                <label className='beach-filter__label' htmlFor={activity}>{activity}</label>
                             </div>
                         ))}
                     </div>
                 )}
             </div>
 
-            <div className='facility-wrapper'>
-                <h4 className='option-title'>
+            <div className='beach-filter__section'>
+                <h4 className='beach-filter__title'
+                    onClick={() => toggleSection(isFacilityOpen, setIsFacilityOpen)}>
                     Facilities
-                    <button className="toggle-button" onClick={() => toggleSection(isFacilityOpen, setIsFacilityOpen)}>
+                    <button className="beach-filter__toggle-button">
                         {isFacilityOpen ? '-' : '+'}
                     </button>
                 </h4>
                 {isFacilityOpen && (
-                    <div className='filter-options'>
+                    <div className='beach-filter__options'>
                         {facilities.map((facility) => (
-                            <div key={facility}>
+                            <div className='beach-filter__option' key={facility}>
                                 <input
                                     type="checkbox"
+                                    className='beach-filter__checkbox'
                                     id={facility}
                                     value={facility}
                                     onChange={() =>
                                         handleCheckboxChange(facility, setSelectedFacilities, selectedFacilities)
                                     }
                                 />
-                                <label className='filter-option' htmlFor={facility}>{facility}</label>
+                                <label className='beach-filter__label' htmlFor={facility}>{facility}</label>
                             </div>
                         ))}
                     </div>
                 )}
             </div>
 
-            <div className='accessibility-wrapper'>
-                <h4 className='option-title'>
+            <div className='beach-filter__section'>
+                <h4 className='beach-filter__title'
+                    onClick={() => toggleSection(isAccessibilityOpen, setIsAccessibilityOpen)}>
                     Accessibility Features
-                    <button className="toggle-button" onClick={() => toggleSection(isAccessibilityOpen, setIsAccessibilityOpen)}>
+                    <button className="beach-filter__toggle-button">
                         {isAccessibilityOpen ? '-' : '+'}
                     </button>
                 </h4>
                 {isAccessibilityOpen && (
-                    <div className='filter-options'>
+                    <div className='beach-filter__options'>
                         {accessibilities.map((accessibility) => (
-                            <div key={accessibility}>
+                            <div className='beach-filter__option' key={accessibility}>
                                 <input
                                     type="checkbox"
+                                    className='beach-filter__checkbox'
                                     id={accessibility}
                                     value={accessibility}
                                     onChange={() =>
                                         handleCheckboxChange(accessibility, setSelectedAccessibilities, selectedAccessibilities)
                                     }
                                 />
-                                <label className='filter-option' htmlFor={accessibility}>{accessibility}</label>
+                                <label className='beach-filter__label' htmlFor={accessibility}>{accessibility}</label>
                             </div>
                         ))}
                     </div>
                 )}
             </div>
 
-            <div className='food-wrapper'>
-                <h4 className='option-title'>
+            <div className='beach-filter__section'>
+                <h4 className='beach-filter__title'
+                    onClick={() => toggleSection(isFoodOpen, setIsFoodOpen)}>
                     Food and Drink
-                    <button className="toggle-button" onClick={() => toggleSection(isFoodOpen, setIsFoodOpen)}>
+                    <button className="beach-filter__toggle-button">
                         {isFoodOpen ? '-' : '+'}
                     </button>
                 </h4>
                 {isFoodOpen && (
-                    <div className='filter-options'>
+                    <div className='beach-filter__options'>
                         {restaurants.map((food) => (
-                            <div key={food}>
+                            <div className='beach-filter__option' key={food}>
                                 <input
                                     type="checkbox"
+                                    className='beach-filter__checkbox'
                                     id={food}
                                     value={food}
                                     onChange={() =>
                                         handleCheckboxChange(food, setSelectedRestaurants, selectedRestaurants)
                                     }
                                 />
-                                <label className='filter-option' htmlFor={food}>{food}</label>
+                                <label className='beach-filter__label' htmlFor={food}>{food}</label>
                             </div>
                         ))}
                     </div>
