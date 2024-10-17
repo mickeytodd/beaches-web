@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import star from '../../assets/images/star.png';
 import BeachFilter from './BeachFilter';
+import Navbar from '../Navbar';
+
 
 const BeachesByLocation = ({ data }) => {
     const { location } = useParams();
@@ -54,47 +56,52 @@ const BeachesByLocation = ({ data }) => {
     }
 
     return (
-        <div className='beaches-location'>
-            <div className='filters-wrapper'>
-                <h3 className='filter-title'>Filters</h3>
-                <BeachFilter
-                    types={["Sandy Beach", "Pebble Beach", "Rocky Beach"]}
-                    activities={["Swimming", "Surfing", "Snorkeling", "Scuba Diving", "Kayaking", "Paddleboarding", "Jet Skiing", "Windsurfing", "Fishing",
-                        "Boat Tours", "Beach Volleyball", "Picnicking", "Camping"
-                    ]}
-                    facilities={["Restroom", "Shower", "Changing Room", "Lifeguard", "First Aid Station"]}
-                    accessibilities={["Wheelchair Accessibility", "Accessible Parking", "Boardwalks or Ramps to the Beach"]}
-                    restaurants={["Beachfront Restaurants or Cafés", "Snack Stands or Food Trucks", "Ice Cream Stands"]}
-                    onFilter={handleFilterChange}
-                />
-            </div>
-            <div className='beaches-location-wrapper'>
-                <h1 className='beaches-location__title'>Beaches in {capitalizeLocation(location)}</h1>
-                <ul className="beaches-location__list">
-                    {filteredBeachesByType.length > 0 ? (
-                        filteredBeachesByType.map(beach => (
-                            <li className="beaches-location__item" key={beach.id} onClick={() => handleBeachClick(beach.id)}>
-                                <Link className='beaches-location__link' to={`/beach-details/${beach.id}`} onClick={(e) => e.preventDefault()}>
-                                    <div className='beach-card'>
-                                        <div className='beach-card__image-container'>
-                                            <img className='beach-card__image' src={beach.image} alt={beach.title} />
-                                        </div>
-                                        <div className='beach-card__info'>
-                                            <h2 className='beach-card__title'>{beach.title}</h2>
-                                            <p className='beach-card__location'>{beach.location}</p>
-                                            <div className="beach-details__rating-container">
-                                                <img className="beach-details__star-icon" src={star} alt="star icon" />
-                                                <p className="beach-details__rating-text">{beach.rating} (150 rates)</p>
+        <div>
+            <Navbar />
+            <div className='beaches-location'>
+                <div className='filters-wrapper'>
+                    <h3 className='filter-title'>Filters</h3>
+                    <div>
+                        <BeachFilter
+                            types={["Sandy Beach", "Pebble Beach", "Rocky Beach"]}
+                            activities={["Swimming", "Surfing", "Snorkeling", "Scuba Diving", "Kayaking", "Paddleboarding", "Jet Skiing", "Windsurfing", "Fishing",
+                                "Boat Tours", "Beach Volleyball", "Picnicking", "Camping"
+                            ]}
+                            facilities={["Restroom", "Shower", "Changing Room", "Lifeguard", "First Aid Station"]}
+                            accessibilities={["Wheelchair Accessibility", "Accessible Parking", "Boardwalks or Ramps to the Beach"]}
+                            restaurants={["Beachfront Restaurants or Cafés", "Snack Stands or Food Trucks", "Ice Cream Stands"]}
+                            onFilter={handleFilterChange}
+                        />
+                    </div>
+                </div>
+                <div className='beaches-location-wrapper'>
+                    <h1 className='beaches-location__title'>Beaches in {capitalizeLocation(location)}</h1>
+                    <ul className="beaches-location__list">
+                        {filteredBeachesByType.length > 0 ? (
+                            filteredBeachesByType.map(beach => (
+                                <li className="beaches-location__item" key={beach.id} onClick={() => handleBeachClick(beach.id)}>
+                                    <Link className='beaches-location__link' to={`/beach-details/${beach.id}`} onClick={(e) => e.preventDefault()}>
+                                        <div className='beach-card'>
+                                            <div className='beach-card__image-container'>
+                                                <img className='beach-card__image' src={beach.image} alt={beach.title} />
+                                            </div>
+                                            <div className='beach-card__info'>
+                                                <h2 className='beach-card__title'>{beach.title}</h2>
+                                                <p className='beach-card__location'>{beach.location}</p>
+                                                <div className="beach-details__rating-container">
+                                                    <img className="beach-details__star-icon" src={star} alt="star icon" />
+                                                    <p className="beach-details__rating-text">{beach.rating} (150 rates)</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </Link>
-                            </li>
-                        ))
-                    ) : (
-                        <p className="beaches-location__no-results">No beaches found in {location}.</p>
-                    )}
-                </ul>
+                                    </Link>
+                                </li>
+                            ))
+                        ) : (
+                            <p className="beaches-location__no-results">No beaches found in {location}.</p>
+                        )}
+                    </ul>
+                </div>
             </div>
         </div>
     );

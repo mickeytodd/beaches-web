@@ -3,23 +3,20 @@
     border-radius: 8px;
     position: sticky;
     top: 20px;
-    height: 100vh
 }
 
 .beach-filter__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1rem;
-    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 24px;
     transition: background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
     border-bottom: 1px solid #e7e7e7;
 }
 
-.beach-filter__option {
-    padding: 3px;
-}
 
 .beach-filter__title:hover {
     background-color: #ececec;
@@ -28,19 +25,32 @@
 .beach-filter__toggle-button {
     background-color: transparent;
     border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    font-size: 1em;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+
+.beach-filter__toggle-button:hover {
+    transform: scale(1.1);
 }
 
 .beach-filter__options {
     padding: 10px 20px;
 }
 
+.beach-filter__option {
+    padding: 3px;
+    display: flex;
+    align-items: center;
+}
+
 .beach-filter__label {
     color: #111111;
     padding: 5px;
+    margin-left: 3px;
 }
 
 .beach-filter__checkbox {
@@ -54,6 +64,7 @@
     cursor: pointer;
     position: relative;
     outline: none;
+    flex-shrink: 0;
 }
 
 .beach-filter__checkbox:checked {

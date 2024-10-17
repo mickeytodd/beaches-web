@@ -1,5 +1,6 @@
 .beaches-location {
     display: flex;
+    padding-top: 60px;
 }
 
 .beaches-location-wrapper {

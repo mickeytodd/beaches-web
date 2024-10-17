@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './BeachFilter.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const BeachFilter = ({ types, activities, facilities, accessibilities, restaurants, onFilter }) => {
     const [selectedTypes, setSelectedTypes] = useState([]);
@@ -40,32 +42,32 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                 <h4 className={`beach-filter__title ${isTypeOpen ? 'active' : ''}`}
                     onClick={() => toggleSection(isTypeOpen, setIsTypeOpen)}>
                     Type
-                    <button
-                        className="beach-filter__toggle-button"
-                    >
-                        {isTypeOpen ? '-' : '+'}
+                    <button className="beach-filter__toggle-button">
+                        {isTypeOpen ? (
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        )}
                     </button>
                 </h4>
-                {
-                    isTypeOpen && (
-                        <div className='beach-filter__options'>
-                            {types.map((type) => (
-                                <div className='beach-filter__option' key={type}>
-                                    <input
-                                        type="checkbox"
-                                        className='beach-filter__checkbox'
-                                        id={type}
-                                        value={type}
-                                        onChange={() =>
-                                            handleCheckboxChange(type, setSelectedTypes, selectedTypes)
-                                        }
-                                    />
-                                    <label className='beach-filter__label' htmlFor={type}>{type}</label>
-                                </div>
-                            ))}
-                        </div>
-                    )
-                }
+                {isTypeOpen && (
+                    <div className='beach-filter__options'>
+                        {types.map((type) => (
+                            <div className='beach-filter__option' key={type}>
+                                <input
+                                    type="checkbox"
+                                    className='beach-filter__checkbox'
+                                    id={type}
+                                    value={type}
+                                    onChange={() =>
+                                        handleCheckboxChange(type, setSelectedTypes, selectedTypes)
+                                    }
+                                />
+                                <label className='beach-filter__label' htmlFor={type}>{type}</label>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div >
 
             <div className='beach-filter__section'>
@@ -73,7 +75,11 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     onClick={() => toggleSection(isActivityOpen, setIsActivityOpen)}>
                     Activities
                     <button className="beach-filter__toggle-button">
-                        {isActivityOpen ? '-' : '+'}
+                        {isActivityOpen ? (
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        )}
                     </button>
                 </h4>
                 {isActivityOpen && (
@@ -101,7 +107,11 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     onClick={() => toggleSection(isFacilityOpen, setIsFacilityOpen)}>
                     Facilities
                     <button className="beach-filter__toggle-button">
-                        {isFacilityOpen ? '-' : '+'}
+                        {isFacilityOpen ? (
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        )}
                     </button>
                 </h4>
                 {isFacilityOpen && (
@@ -129,7 +139,11 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     onClick={() => toggleSection(isAccessibilityOpen, setIsAccessibilityOpen)}>
                     Accessibility Features
                     <button className="beach-filter__toggle-button">
-                        {isAccessibilityOpen ? '-' : '+'}
+                        {isAccessibilityOpen ? (
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        )}
                     </button>
                 </h4>
                 {isAccessibilityOpen && (
@@ -157,7 +171,11 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     onClick={() => toggleSection(isFoodOpen, setIsFoodOpen)}>
                     Food and Drink
                     <button className="beach-filter__toggle-button">
-                        {isFoodOpen ? '-' : '+'}
+                        {isFoodOpen ? (
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        )}
                     </button>
                 </h4>
                 {isFoodOpen && (

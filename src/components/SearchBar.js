@@ -5,8 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import FilterOptions from './FilterOptions';
-
 const SearchBar = ({ data }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredBeaches, setFilteredBeaches] = useState([]);
@@ -136,15 +134,6 @@ const SearchBar = ({ data }) => {
                     )}
                 </div>
             </div>
-            <button className='filter-button' onClick={handleFilterButtonClick}>
-                Filters
-            </button>
-            {isFilterMenuOpen && (
-                <FilterOptions
-                    onFilterChange={handleFilterChange}
-                    filters={['Location', 'Rating', 'Type']}
-                />
-            )}
         </div >
     );
 };
