@@ -44,9 +44,9 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     Type
                     <button className="beach-filter__toggle-button">
                         {isTypeOpen ? (
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        ) : (
                             <FontAwesomeIcon icon={faChevronUp} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronDown} />
                         )}
                     </button>
                 </h4>
@@ -76,9 +76,9 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     Activities
                     <button className="beach-filter__toggle-button">
                         {isActivityOpen ? (
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        ) : (
                             <FontAwesomeIcon icon={faChevronUp} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronDown} />
                         )}
                     </button>
                 </h4>
@@ -108,9 +108,9 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     Facilities
                     <button className="beach-filter__toggle-button">
                         {isFacilityOpen ? (
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        ) : (
                             <FontAwesomeIcon icon={faChevronUp} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronDown} />
                         )}
                     </button>
                 </h4>
@@ -140,9 +140,9 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     Accessibility Features
                     <button className="beach-filter__toggle-button">
                         {isAccessibilityOpen ? (
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        ) : (
                             <FontAwesomeIcon icon={faChevronUp} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronDown} />
                         )}
                     </button>
                 </h4>
@@ -172,9 +172,9 @@ const BeachFilter = ({ types, activities, facilities, accessibilities, restauran
                     Food and Drink
                     <button className="beach-filter__toggle-button">
                         {isFoodOpen ? (
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        ) : (
                             <FontAwesomeIcon icon={faChevronUp} />
+                        ) : (
+                            <FontAwesomeIcon icon={faChevronDown} />
                         )}
                     </button>
                 </h4>

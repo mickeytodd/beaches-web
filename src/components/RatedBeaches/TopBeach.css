@@ -1,4 +1,4 @@
-.rated-beach__wrapper {
+.top-beach__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,7 +13,7 @@
     padding: 1rem;
 }
 
-.rated-beach__image {
+.top-beach__image {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -22,7 +22,7 @@
 
 }
 
-.rated-beach__title {
+.top-beach__title {
     color: black;
     font-size: 1.2rem;
     line-height: 1.4;

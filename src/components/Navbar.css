@@ -11,7 +11,6 @@
     font-style: italic;
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,7 +21,7 @@
     width: 100%;
     top: 0;
     z-index: 10;
-    padding: 0.5em 2em;
+    padding: 0.5em 3em;
 }
 
 .navbar__links {
