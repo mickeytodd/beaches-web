@@ -19,7 +19,7 @@ const BeachDetails = ({ data }) => {
     }
 
     return (
-        <div>
+        <div className='beach-details'>
             <div className="beach-details__header">
                 <div className="beach-details__image-container">
                     <img className="beach-details__image" src={beachDetails.image} alt={`${beachDetails.title}`} />
@@ -49,24 +49,40 @@ const BeachDetails = ({ data }) => {
                         Weather
                     </li>
                     <li
-                        className={`beach-details__tab ${activeTab === 'Rewievs' ? 'active' : ''}`}
-                        onClick={() => handleTabClick('Rewievs')}
+                        className={`beach-details__tab ${activeTab === 'Reviews' ? 'active' : ''}`}
+                        onClick={() => handleTabClick('Reviews')}
                     >
-                        Rewievs
+                        Reviews
                     </li>
                 </ul>
                 <div className="beach-details__tab-container">
                     <div className={`beach-details__tab-content ${activeTab === 'Features' ? 'active' : ''}`}>
-                        <p>Type: {beachDetails.type}</p>
-                        <p>Activities: Surfing, Scuba Diving, Windsurfing, Romantic Diner, Camp on the beach </p>
-                        <p>Facilities: Restrooms, Showers, Changing Rooms, Playgrounds, Water Sport Rentals, Volleyball court, First Aid Station, Beach Bars, Restaurants, Cafe, Lifeguard Stations, Parking</p>
-                        <p>Events: Beach Wedding, Beach Party, Volleyball Tournament, Movie Night, Music Festival, Fitness Classes, Food and Drink festival</p>
+                        <div className="beach-details__section">
+                            <h3 className="beach-details__section-title">Type:</h3>
+                            <p className="beach-details__section-content">{beachDetails.type}</p>
+                        </div>
+                        <div className="beach-details__section">
+                            <h3 className="beach-details__section-title">Activities:</h3>
+                            <p className="beach-details__section-content">{beachDetails.activities}</p>
+                        </div>
+                        <div className="beach-details__section">
+                            <h3 className="beach-details__section-title">Facilities:</h3>
+                            <p className="beach-details__section-content">{beachDetails.facilities}</p>
+                        </div>
+                        <div className="beach-details__section">
+                            <h3 className="beach-details__section-title">Accessibility:</h3>
+                            <p className="beach-details__section-content">{beachDetails.accessibilities}</p>
+                        </div>
+                        <div className="beach-details__section">
+                            <h3 className="beach-details__section-title">Restaurants:</h3>
+                            <p className="beach-details__section-content">{beachDetails.restaurants}</p>
+                        </div>
                     </div>
                     <div className={`beach-details__tab-content ${activeTab === 'Weather' ? 'active' : ''}`}>
                         Weather
                     </div>
-                    <div className={`beach-details__tab-content ${activeTab === 'Premium' ? 'active' : ''}`}>
-                        Rewievs
+                    <div className={`beach-details__tab-content ${activeTab === 'Reviews' ? 'active' : ''}`}>
+                        Reviews
                     </div>
                 </div>
             </div >

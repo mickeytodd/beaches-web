@@ -1,3 +1,8 @@
+.beach-details {
+    display: flex;
+    flex-direction: column;
+}
+
 .beach-details__header {
     display: flex;
     padding: 20px 150px;
@@ -65,54 +70,75 @@
 }
 
 .beach-details__tabs-wrapper {
-    width: 100%;
-    margin-top: 20px;
+    padding: 0 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .beach-details__tabs {
     display: flex;
+    justify-content: space-around;
     list-style-type: none;
     padding: 0;
-    margin: 0;
     border-bottom: 2px solid #ccc;
 }
 
 .beach-details__tab {
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 4px 4px 0 0;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .beach-details__tab:hover {
-    background-color: #f5f5f5;
+    color: #007BFF;
 }
 
 .beach-details__tab.active {
-    border: 1px solid #ccc;
-    border-bottom: 2px solid white;
-    background-color: white;
-    color: #333;
-    font-weight: bold;
+    color: #007BFF;
 }
 
 .beach-details__tab-container {
-    border: 1px solid #ccc;
-    border-radius: 0 4px 4px 4px;
-    padding: 20px;
-    margin-top: -1px;
-    background-color: white;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-top: 1rem;
+    color: #333;
+}
+
+.beach-details__section {
+    margin-bottom: 2rem;
 }
 
 .beach-details__tab-content {
     display: none;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
 }
 
 .beach-details__tab-content.active {
     display: block;
 }
 
+.beach-details__section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #007BFF;
+    margin-bottom: 0.5rem;
+}
+
+.beach-details__section-content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
 
 @media (max-width: 1200px) {
     .beach-details__header {
@@ -144,6 +170,18 @@
 
     .beach-details__rating-container {
         justify-content: center;
+    }
+
+    .beach-details__tab-container {
+        padding: 1rem;
+    }
+
+    .beach-details__section-title {
+        font-size: 1.1rem;
+    }
+
+    .beach-details__section-content {
+        font-size: 0.95rem;
     }
 }
 
