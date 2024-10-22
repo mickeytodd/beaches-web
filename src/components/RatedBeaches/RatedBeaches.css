@@ -16,7 +16,8 @@
 }
 
 .rated-beaches__cards,
-.top-beaches__cards {
+.top-beaches__cards,
+.recently-beaches__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -24,7 +25,8 @@
 }
 
 .rated-beaches__title,
-.top-beaches__title {
+.top-beaches__title,
+.recently-beaches__title {
     text-align: center;
     font-size: 1.8rem;
     color: #002D5C;
@@ -33,21 +35,24 @@
 }
 
 .rated-beach__location,
-.top-beach__location {
+.top-beach__location,
+.recently-beach__location {
     color: black;
     font-size: 1.1rem;
     padding: 5px;
 }
 
 .rated-beach__rating,
-.top-beach__rating {
+.top-beach__rating,
+.recently-beach__rating {
     color: #2e2e2e;
     padding: 5px;
 }
 
 
 .top-beach__wrapper,
-.rated-beach__wrapper {
+.rated-beach__wrapper,
+.recently-beach__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,7 +69,8 @@
 }
 
 .top-beach__image,
-.rated-beach__image {
+.rated-beach__image,
+.recently-beach__image {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -74,7 +80,8 @@
 
 
 .top-beach__title,
-.rated-beach__title {
+.rated-beach__title,
+.recently-beach__title {
     color: black;
     font-size: 1.2rem;
     line-height: 1.4;
@@ -92,9 +99,6 @@
 .rated-beaches__link {
     text-decoration: none;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
     .beaches-section {

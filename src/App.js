@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BeachDetails from './components/BeachDetails/BeachDetails';
 import Home from './components/Home';
 import BeachesByLocation from './components/BeachesByLocation/BeachesByLocation';
+import RatedBeaches from './components/RatedBeaches/RatedBeaches';
+import TopRatedBeaches from './components/RatedBeaches/TopRatedBeaches';
+import RecentlyRatedBeaches from './components/RatedBeaches/RecentlyRatedBeaches';
+
 
 function App() {
 
@@ -210,8 +214,11 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home data={data} />} />
-          <Route path="/beach-details/:id" element={<BeachDetails data={data} />} />
           <Route path="/location/:location" element={<BeachesByLocation data={data} />} />
+          <Route path="/top-rated-beaches" element={<TopRatedBeaches data={data} />} />
+          <Route path="/recently-rated-beaches" element={<RecentlyRatedBeaches data={data} />} />
+          <Route path='/rated-beaches' element={<RatedBeaches data={data} />} />
+          <Route path="/beach-details/:id" element={<BeachDetails data={data} />} />
         </Routes>
       </Router>
     </div>

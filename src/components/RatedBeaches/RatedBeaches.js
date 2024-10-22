@@ -1,16 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './RatedBeaches.css';
 
 function RatedBeaches({ data }) {
 
+    const navigate = useNavigate();
+
     const topBeaches = [...data].sort((a, b) => b.rating - a.rating).slice(0, 4);
     const recentlyRated = [...data].slice(0, 4);
+
+    const handleTopBeachesClick = () => {
+        navigate('/top-rated-beaches', { state: { topBeaches } });
+    };
+
+    const handleRecentlyRatedBeachesClick = () => {
+        navigate('/recently-rated-beaches', { state: { recentlyRated } });
+    };
 
     return (
         <div className='beaches-section'>
 
-            <div className='rated-beaches'>
+            <div className='rated-beaches' onClick={handleRecentlyRatedBeachesClick}>
                 <h2 className='rated-beaches__title'>Recently Rated Beaches</h2>
                 <div className="rated-beaches__cards">
                     {recentlyRated.map(beach => (
@@ -28,7 +38,7 @@ function RatedBeaches({ data }) {
                 </div>
             </div>
 
-            <div className='top-beaches'>
+            <div className='top-beaches' onClick={handleTopBeachesClick}>
                 <h2 className='top-beaches__title'>Top Beaches</h2>
                 <div className="top-beaches__cards">
                     {topBeaches.map(beach => (
