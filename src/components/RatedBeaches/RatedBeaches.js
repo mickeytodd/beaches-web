@@ -35,7 +35,6 @@ function RatedBeaches({ data }) {
                     ))}
                 </div>
             </div>
-
         </div>
     );
 }
