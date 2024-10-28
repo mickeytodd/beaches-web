@@ -18,6 +18,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+    width: 100%;
     padding: 1rem;
 }
 
@@ -32,9 +33,6 @@
     width: 20rem;
 }
 
-.recently-rated-beaches__cards::after {
-    content: "";
-}
 
 .recently-rated-beaches__cards .beach-card__wrapper:hover {
     background-color: #f9f9f9;
