@@ -18,13 +18,14 @@ function RecentlyRatedBeaches() {
 
     return (
         <div className='recently-rated-beaches-page'>
-            <h2>Recently Rated Beaches</h2>
+            <h2 className='recently-rated-beaches__title'>Recently Rated Beaches</h2>
             <div className="recently-rated-beaches__cards">
                 {recentlyRated.map(beach => (
                     <Card
                         key={beach.id}
                         beach={beach}
-                        onClick={() => handleBeachClick(beach.id)} />
+                        onClick={() => handleBeachClick(beach.id)}
+                    />
                 ))}
             </div>
         </div>

@@ -1,10 +1,82 @@
 .recently-rated-beaches-page {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: #333;
+}
+
+.recently-rated-beaches__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #0077b6;
 }
 
 .recently-rated-beaches__cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 1.5rem;
+    padding: 1rem;
+}
+
+.recently-rated-beaches__cards .beach-card__wrapper {
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+    animation: fadeIn 0.4s ease-in;
+    width: 20rem;
+}
+
+.recently-rated-beaches__cards::after {
+    content: "";
+}
+
+.recently-rated-beaches__cards .beach-card__wrapper:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+}
+
+.recently-rated-beaches__cards .beach-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.recently-rated-beaches__cards .beach-card__title {
+    color: #003366;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.recently-rated-beaches__cards .beach-card__location {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.recently-rated-beaches__cards .beach-card__rating {
+    color: #4CAF50;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

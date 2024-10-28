@@ -18,12 +18,13 @@ function TopRatedBeaches() {
 
     return (
         <div className='top-rated-beaches-page'>
-            <h2>Top Rated Beaches</h2>
+            <h2 className='top-rated-beaches__title'>Top Rated Beaches</h2>
             <div className="top-beaches__cards">
                 {topBeaches.map(beach => (
                     <Card
                         key={beach.id}
                         beach={beach}
+                        className="top-beaches-card"
                         onClick={() => handleBeachClick(beach.id)}
                     />
                 ))}
