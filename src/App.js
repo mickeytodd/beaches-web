@@ -4,8 +4,6 @@ import BeachDetails from './components/BeachDetails/BeachDetails';
 import Home from './components/Home';
 import BeachesByLocation from './components/BeachesByLocation/BeachesByLocation';
 import RatedBeaches from './components/RatedBeaches/RatedBeaches';
-import TopRatedBeaches from './components/RatedBeaches/TopRatedBeaches';
-import RecentlyRatedBeaches from './components/RatedBeaches/RecentlyRatedBeaches';
 
 
 function App() {
@@ -79,7 +77,7 @@ function App() {
     {
       id: 'b6',
       image: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
-      title: 'Cape Le Grand National Par',
+      title: 'Cape Le Grand National Park',
       location: 'Cape Le Grand Rd, Cape Le Grand WA 6450, Australia',
       amount: 500.25,
       type: "Sandy Beach",
@@ -215,8 +213,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home data={data} />} />
           <Route path="/location/:location" element={<BeachesByLocation data={data} />} />
-          <Route path="/top-rated-beaches" element={<TopRatedBeaches data={data} />} />
-          <Route path="/recently-rated-beaches" element={<RecentlyRatedBeaches data={data} />} />
           <Route path='/rated-beaches' element={<RatedBeaches data={data} />} />
           <Route path="/beach-details/:id" element={<BeachDetails data={data} />} />
         </Routes>
