@@ -81,13 +81,13 @@ const BeachesByLocation = ({ data }) => {
                             filteredBeachesByType.map(beach => (
                                 <li className="beaches-location__item" key={beach.id} onClick={() => handleBeachClick(beach.id)}>
                                     <Link className='beaches-location__link' to={`/beach-details/${beach.id}`} onClick={(e) => e.preventDefault()}>
-                                        <div className='beach-card'>
-                                            <div className='beach-card__image-container'>
-                                                <img className='beach-card__image' src={beach.image} alt={beach.title} />
+                                        <div className='beach-item'>
+                                            <div className='beach-item__image-container'>
+                                                <img className='beach-item__image' src={beach.image} alt={beach.title} />
                                             </div>
-                                            <div className='beach-card__info'>
-                                                <h2 className='beach-card__title'>{beach.title}</h2>
-                                                <p className='beach-card__location'>{beach.location}</p>
+                                            <div className='beach-item__info'>
+                                                <h2 className='beach-item__title'>{beach.title}</h2>
+                                                <p className='beach-item__location'>{beach.location}</p>
                                                 <div className="beach-details__rating-container">
                                                     <img className="beach-details__star-icon" src={star} alt="star icon" />
                                                     <p className="beach-details__rating-text">{beach.rating} (150 rates)</p>

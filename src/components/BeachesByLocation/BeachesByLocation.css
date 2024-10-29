@@ -9,7 +9,6 @@
     padding: 0 15px;
 }
 
-
 .beaches-location__title {
     text-align: center;
     font-size: 2.5rem;
@@ -19,7 +18,7 @@
     color: #002D5C;
 }
 
-.beach-card__title {
+.beach-item__title {
     font-size: 1.3em;
     font-weight: bold;
     margin: 0;
@@ -27,13 +26,13 @@
     text-align: center;
 }
 
-.beach-card__location {
+.beach-item__location {
     text-align: center;
     padding: 20px;
     color: #434343
 }
 
-.beach-card__info {
+.beach-item__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,13 +41,13 @@
     font-size: 1.5em;
 }
 
-.beach-card__image-container {
+.beach-item__image-container {
     display: flex;
     justify-content: center;
     padding: 10px;
 }
 
-.beach-card__image {
+.beach-item__image {
     width: 100%;
     max-width: 500px;
     height: auto;
@@ -89,7 +88,7 @@
     cursor: pointer;
 }
 
-.beach-card {
+.beach-item {
     display: flex;
     flex-direction: column;
     align-items: center;

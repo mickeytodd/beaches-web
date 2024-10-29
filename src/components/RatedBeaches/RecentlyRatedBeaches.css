@@ -14,15 +14,16 @@
 
 .recently-rated-beaches__cards {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
-    width: 100%;
     padding: 1rem;
 }
 
 .recently-rated-beaches__cards .beach-card__wrapper {
+    display: flex;
+    flex-direction: row;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -30,9 +31,15 @@
     transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
     cursor: pointer;
     animation: fadeIn 0.4s ease-in;
-    width: 20rem;
 }
 
+.recently-rated-beaches__cards .beach-card__img-wrapper {
+    width: 50%;
+}
+
+.recently-rated-beaches__cards .beach-card__info-wrapper {
+    width: 50%;
+}
 
 .recently-rated-beaches__cards .beach-card__wrapper:hover {
     background-color: #f9f9f9;
@@ -42,7 +49,6 @@
 
 .recently-rated-beaches__cards .beach-card__image {
     width: 100%;
-    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 1rem;

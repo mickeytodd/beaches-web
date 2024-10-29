@@ -24,7 +24,6 @@ function TopRatedBeaches() {
                     <Card
                         key={beach.id}
                         beach={beach}
-                        className="top-beaches-card"
                         onClick={() => handleBeachClick(beach.id)}
                     />
                 ))}
