@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BeachDetails.css';
 import star from '../../assets/images/star.png';
+import Navbar from '../Navbar'
 
 const BeachDetails = ({ data }) => {
     const [activeTab, setActiveTab] = useState('Features');
@@ -20,6 +21,7 @@ const BeachDetails = ({ data }) => {
 
     return (
         <div className='beach-details'>
+            <Navbar />
             <div className="beach-details__header">
                 <div className="beach-details__image-container">
                     <img className="beach-details__image" src={beachDetails.image} alt={`${beachDetails.title}`} />

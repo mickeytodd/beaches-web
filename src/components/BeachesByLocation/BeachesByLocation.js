@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import star from '../../assets/images/star.png';
 import BeachFilter from './BeachFilter';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar'
 
 
 const BeachesByLocation = ({ data }) => {

@@ -94,7 +94,9 @@ const SearchBar = ({ data }) => {
 
     return (
         <div className='header-wrapper'>
-            <h1 className='header-title'>Find your perfect beach</h1>
+            <h1 className='header-title'>
+                Find your <span className="highlight">perfect</span> beach
+            </h1>
             <div className={`search-bar-wrapper ${isDropdownOpen ? 'search-bar-wrapper-open' : 'search-bar-wrapper-closed'}`}>
                 <div className="search-bar">
                     <div className='search-bar__magnifying-glass'>
