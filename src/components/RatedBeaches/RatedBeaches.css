@@ -1,8 +1,7 @@
  .rated-beaches-wrapper {
-     padding: 40px 20px;
-     background-color: #F0F8FF;
-     border-radius: 10px;
-     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+     padding: 2rem;
+     max-width: 1200px;
+     margin: auto;
  }
 
  .rated-beaches-section {
@@ -24,4 +23,37 @@
      flex-direction: row;
      justify-content: center;
      gap: 20px;
+ }
+
+ .rated-beaches-section {
+     margin-bottom: 2rem;
+ }
+
+ .rated-beaches__title {
+     font-size: 1.5rem;
+     color: #003366;
+     margin-bottom: 1rem;
+     text-align: center;
+ }
+
+ .rated-beaches__carousel {
+     padding: 0 1rem;
+ }
+
+ .carousel__card {
+     padding: 0.5rem;
+ }
+
+ .rated-beaches-wrapper .slick-prev:before,
+ .rated-beaches-wrapper .slick-next:before {
+     color: #003366;
+ }
+
+ .slick-dots li button:before {
+     color: #003366;
+ }
+
+ .slick-prev:before,
+ .slick-next:before {
+     color: #003366;
  }
