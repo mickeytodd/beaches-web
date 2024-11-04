@@ -1,51 +1,27 @@
  .rated-beaches-wrapper {
-     display: flex;
-     flex-direction: column;
-     background-color: #f9f9f9;
-     background-color: white;
+     padding: 40px 20px;
+     background-color: #F0F8FF;
+     border-radius: 10px;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
  }
 
  .rated-beaches-section {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     width: 100%;
-     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-     padding: 2rem;
-     margin: 0.2em 0;
+     margin-bottom: 40px;
+     padding: 20px;
  }
 
  .rated-beaches__title {
+     font-size: 2rem;
+     font-weight: bold;
+     color: #2F4F4F;
+     margin-bottom: 20px;
      text-align: center;
-     font-size: 1.8rem;
-     color: #002D5C;
-     margin-bottom: 1.5rem;
-     padding: 5px;
+     font-family: 'Poppins', sans-serif;
  }
 
  .rated-beaches__cards {
      display: flex;
      flex-direction: row;
- }
-
- .rated-beaches__cards .beach-card__wrapper {
-     margin: 1em;
- }
-
-
- @media screen and (max-width: 768px) {
-     .beaches-section {
-         flex-direction: column;
-     }
-
-     .rated-beaches,
-     .top-beaches {
-         width: 100%;
-         margin-bottom: 2rem;
-     }
-
-     .rated-beaches__cards,
-     .top-beaches__cards {
-         grid-template-columns: 1fr;
-     }
+     justify-content: center;
+     gap: 20px;
  }

@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background-color: #ADD8E6;
+    background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     color: #2F4F4F;
     position: sticky;
@@ -14,7 +14,7 @@
 .navbar__logo a {
     font-size: 2rem;
     font-weight: 700;
-    color: #2F4F4F;
+    color: #165c35;
     text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
     margin: 0;
     padding: 10px 20px;
