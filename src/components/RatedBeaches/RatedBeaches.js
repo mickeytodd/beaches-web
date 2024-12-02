@@ -7,7 +7,6 @@ import './RatedBeaches.css';
 function RatedBeaches({ data }) {
     const navigate = useNavigate();
 
-    // Select top 10 beaches for each category
     const topBeaches = [...data].sort((a, b) => b.rating - a.rating).slice(0, 10);
     const recentlyRated = [...data].slice(0, 10);
 

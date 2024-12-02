@@ -5,7 +5,7 @@ function Card({ beach, onClick }) {
     return (
         <div onClick={onClick} className='beach-card__wrapper'>
             <div className='beach-card__img-wrapper'>
-                <img src={beach.image} alt={beach.title} className='beach-card__image' />
+                <img src={beach.image} alt={beach.title} className='beach-card__image' loading="lazy" />
             </div>
             <div className='beach-card__info-wrapper'>
                 <h3 className='beach-card__title'>{beach.title}</h3>
