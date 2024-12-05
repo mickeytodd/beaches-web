@@ -1,0 +1,13 @@
+.beachHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+    padding: 0 20px 150px;
+    border-bottom: 1px solid rgba(219, 219, 219, 0.24);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}

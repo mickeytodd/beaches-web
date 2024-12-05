@@ -2,13 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 170px 20px 150px;
+    padding: 170px 20px 140px;
     border-bottom: 1px solid rgba(219, 219, 219, 0.24);
     background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     color: #fff;
     text-align: center;
     position: relative;
+    width: 70%;
+    border-radius: 20px;
+    margin-top: 40px;
 }
 
 .header-wrapper::before {
@@ -20,6 +23,7 @@
     height: 100%;
     background-color: rgb(0 0 0 / 17%);
     z-index: 1;
+    border-radius: 20px;
 }
 
 .header-wrapper>* {
