@@ -8,7 +8,7 @@ const Navbar = () => {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
 
     return (
-        <div>
+        <div className='navbar__container'>
             <nav className='navbar'>
                 <div className="navbar__logo">
                     <a href="/">BeachFinder</a>

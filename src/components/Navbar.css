@@ -1,8 +1,12 @@
+.navbar__container {
+    width: 100%;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 180px;
+    padding: 20px 220px;
     background-color: #f0f0f0;
     color: #2F4F4F;
     position: sticky;
@@ -26,6 +30,7 @@
 
 .navbar__menu {
     display: flex;
+    align-items: center;
     gap: 20px;
     list-style: none;
     margin: 0;
@@ -70,6 +75,24 @@
     margin-left: 20px;
 }
 
+.login-btn {
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #0093c4, #006494);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
 
 @media (max-width: 768px) {
     .navbar__menu {
@@ -78,5 +101,10 @@
 
     .navbar__hamburger {
         display: flex;
+    }
+
+    .login-btn {
+        font-size: 14px;
+        padding: 8px 16px;
     }
 }
