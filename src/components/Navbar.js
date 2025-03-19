@@ -1,33 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import UserAvatar from './UserAvatar';
 import userIcon from '../assets/images/user.png';
-
+import Login from './Login/Login';
 
 const Navbar = () => {
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
 
     return (
-        <nav className='navbar'>
-            <div className="navbar__logo">
-                <a href="/">BeachFinder</a>
-            </div>
-            <div className='navbar__links'>
-                <ul className="navbar__menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#favorites">Favorites</a></li>
-                    <li><a href="#activities">Activities</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div className="navbar__hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <div>
+            <nav className='navbar'>
+                <div className="navbar__logo">
+                    <a href="/">BeachFinder</a>
                 </div>
-                <div>
-                    <UserAvatar imageUrl={userIcon} />
+                <div className='navbar__links'>
+                    <ul className="navbar__menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#myProfile">My Profile</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><button className="login-btn" onClick={() => setIsLoginOpen(true)}>Log in</button></li>
+                    </ul>
+                    <div className="navbar__hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div>
+                        <UserAvatar imageUrl={userIcon} />
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+            <Login isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+        </div>
     );
 };
 

@@ -1,0 +1,157 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.login-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-in-out;
+}
+
+.login-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-content button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.login-content button:hover {
+    background: #0056b3;
+}
+
+.close-button {
+    background: red;
+    padding: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login_label {
+    color: black;
+}
+
+.google-auth {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.google-auth img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-auth:hover {
+    background: #f0f0f0;
+}
+
+
+.switch-auth {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+.switch-auth:hover {
+    color: #0056b3;
+}
+
+h2 {
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+@media (max-width: 480px) {
+    .login-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .login-content input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .login-content button {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
