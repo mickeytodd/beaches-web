@@ -15,8 +15,8 @@ const Navbar = () => {
                 </div>
                 <div className='navbar__links'>
                     <ul className="navbar__menu">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#myProfile">My Profile</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/profile">My Profile</a></li>
                         <li><a href="#favorites">Favorites</a></li>
                         <li><button className="login-btn" onClick={() => setIsLoginOpen(true)}>Log in</button></li>
                     </ul>

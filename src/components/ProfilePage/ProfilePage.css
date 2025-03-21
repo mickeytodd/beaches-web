@@ -1,0 +1,108 @@
+.profile-page {
+    background: linear-gradient(to bottom, #87CEEB, #FFDEAD);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-container {
+    padding: 20px 220px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-btn {
+    padding: 10px 16px;
+    background: #FFA07A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    width: 30%;
+}
+
+.edit-btn:hover {
+    background: #FF6347;
+}
+
+.activity-list {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.beach-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #0077b6;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.beach-link:hover {
+    color: #ffba08;
+}
+
+.section-title {
+    color: #2F4F4F;
+    margin-bottom: 10px;
+}
+
+.activity-grid {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.activity-card {
+    background: rgba(255, 239, 184, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.activity-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.profile-achievements {
+    padding-top: 30px;
+}
+
+.achievements-list {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.achievement-badge {
+    background: #FFD700;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+}

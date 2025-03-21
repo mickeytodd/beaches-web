@@ -4,6 +4,7 @@ import BeachDetails from './components/BeachDetails/BeachDetails';
 import Home from './components/Home';
 import BeachesByLocation from './components/BeachesByLocation/BeachesByLocation';
 import RatedBeaches from './components/RatedBeaches/RatedBeaches';
+import ProfilePage from './components/ProfilePage/ProfilePage';
 
 
 function App() {
@@ -215,6 +216,7 @@ function App() {
           <Route path="/location/:location" element={<BeachesByLocation data={data} />} />
           <Route path='/rated-beaches' element={<RatedBeaches data={data} />} />
           <Route path="/beach-details/:id" element={<BeachDetails data={data} />} />
+          <Route path="/profile" element={<ProfilePage data={data} />} />
         </Routes>
       </Router>
     </div>

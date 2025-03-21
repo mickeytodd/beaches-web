@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './BeachDetails.css';
 import star from '../../assets/images/star.png';
-import Navbar from '../Navbar'
+import Navbar from '../Navbar';
 
 const BeachDetails = ({ data }) => {
     const [activeTab, setActiveTab] = useState('Features');
