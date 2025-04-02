@@ -15,7 +15,6 @@ import photoThailand from '../../assets/images/photo-thailand.avif';
 
 const ProfilePage = ({ data }) => {
     const [activeTab, setActiveTab] = useState('photos');
-
     const [user, setUser] = useState({
         name: "John Doe",
         bio: "Beach lover & explorer 🌊🏝️",
@@ -29,13 +28,13 @@ const ProfilePage = ({ data }) => {
             { id: "b3", text: "Crystal clear waters, perfect for swimming." }
         ],
         uploadedPhotos: [
-            { id: 1, src: photoHawaii, location: "Hawaii" },
-            { id: 2, src: photoMaldives, location: "Maldives" },
-            { id: 3, src: photoBalos, location: "Balos Beach" },
-            { id: 4, src: photoElafonissi, location: "Elafonissi Beach, Crete" },
-            { id: 5, src: photoMaya, location: "Maya Bay, Thailand" },
-            { id: 6, src: photoNavagio, location: "Navagio, Zakynthos" },
-            { id: 7, src: photoThailand, location: "Thailand" }
+            { id: 1, src: photoHawaii, location: "Hawaii", uploadDate: "2025-03-30" },
+            { id: 2, src: photoMaldives, location: "Maldives", uploadDate: "2025-03-28" },
+            { id: 3, src: photoBalos, location: "Balos Beach", uploadDate: "2025-03-22" },
+            { id: 4, src: photoElafonissi, location: "Elafonissi Beach, Crete", uploadDate: "2025-03-20" },
+            { id: 5, src: photoMaya, location: "Maya Bay, Thailand", uploadDate: "2025-03-15" },
+            { id: 6, src: photoNavagio, location: "Navagio, Zakynthos", uploadDate: "2025-03-12" },
+            { id: 7, src: photoThailand, location: "Thailand", uploadDate: "2025-03-10" }
         ],
         achievements: ["Top Reviewer", "Explorer"]
     });
@@ -43,6 +42,20 @@ const ProfilePage = ({ data }) => {
     const ratedBeaches = data.filter(beach => user.ratedBeachIds.includes(beach.id));
     const favoriteBeaches = data.filter(beach => user.favoriteBeachIds.includes(beach.id));
     const wishlistBeaches = data.filter(beach => user.wishlistBeachIds.includes(beach.id));
+
+    // State for Modal
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+    const handlePhotoClick = (photo) => {
+        setSelectedPhoto(photo);
+        setModalVisible(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalVisible(false);
+        setSelectedPhoto(null);
+    };
 
     return (
         <div>
@@ -74,7 +87,7 @@ const ProfilePage = ({ data }) => {
                             <h3 className="section-title">Uploaded Photos</h3>
                             <div className="photos-grid">
                                 {user.uploadedPhotos.map(photo => (
-                                    <div key={photo.id} className="photo-item">
+                                    <div key={photo.id} className="photo-item" onClick={() => handlePhotoClick(photo)}>
                                         <div className="photo-location">{photo.location}</div>
                                         <img src={photo.src} alt="Beach" className="uploaded-photo" />
                                     </div>
@@ -83,6 +96,17 @@ const ProfilePage = ({ data }) => {
                         </div>
                     )}
 
+                    {/* Modal */}
+                    {selectedPhoto && (
+                        <div className={`photo-modal ${selectedPhoto ? 'show' : ''}`} onClick={() => setSelectedPhoto(null)}>
+                            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                                <span className="close-btn" onClick={() => setSelectedPhoto(null)}>&times;</span>
+                                <img src={selectedPhoto.src} alt="Beach" className="modal-photo" />
+                                <p className="modal-location">{selectedPhoto.location}</p>
+                                <p className="modal-date">Uploaded on: {selectedPhoto.uploadedAt}</p>
+                            </div>
+                        </div>
+                    )}
                     {activeTab === 'rated' && (
                         <div className="rated-beaches-section">
                             <h3 className="section-title">Rated Beaches & Reviews</h3>
