@@ -27,11 +27,17 @@ const Login = ({ isOpen, onClose }) => {
         }
     };
 
+    // Prevent form submission when the button is clicked
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here (e.g., login or signup)
+    };
+
     return (
         <div className={`login-overlay ${isOpen ? "fade-in" : "fade-out"}`} onClick={handleOverlayClick}>
             <div className="login-content">
                 <h2>{isRegistering ? "Sign Up" : "Login"}</h2>
-                <form className="login-form__container">
+                <form className="login-form__container" onSubmit={handleSubmit}>
                     {isRegistering && (
                         <>
                             <label>Name:</label>
@@ -64,7 +70,7 @@ const Login = ({ isOpen, onClose }) => {
                         </>
                     )}
 
-                    <button type="submit">{isRegistering ? "Sign Up" : "Log In"}</button>
+                    <button className="submit-btn" type="submit">{isRegistering ? "Sign Up" : "Log In"}</button>
                 </form>
 
                 <div className="social-media__container">

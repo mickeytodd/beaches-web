@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar';
 import { FaEdit, FaMapMarkerAlt, FaStar, FaHeart } from "react-icons/fa";
-import { FaClipboardList, FaComment, FaCameraRetro } from "react-icons/fa";
 import "./ProfilePage.css";
 import userImg from '../../assets/images/male-user.png';
 import photoHawaii from '../../assets/images/photo-hawaii.avif';
@@ -43,19 +42,46 @@ const ProfilePage = ({ data }) => {
     const favoriteBeaches = data.filter(beach => user.favoriteBeachIds.includes(beach.id));
     const wishlistBeaches = data.filter(beach => user.wishlistBeachIds.includes(beach.id));
 
-    // State for Modal
     const [modalVisible, setModalVisible] = useState(false);
-    const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-    const handlePhotoClick = (photo) => {
-        setSelectedPhoto(photo);
-        setModalVisible(true);
+    const [currentPhotoIndex, setCurrentPhotoIndex] = useState(null);
+
+    const handlePhotoClick = (photoIndex) => {
+        if (photoIndex !== null) {
+            setCurrentPhotoIndex(photoIndex);
+            setModalVisible(true);
+        }
+    };
+
+    const handleNextPhoto = () => {
+        setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % user.uploadedPhotos.length);
+    };
+
+    const handlePrevPhoto = () => {
+        setCurrentPhotoIndex((prevIndex) =>
+            prevIndex === 0 ? user.uploadedPhotos.length - 1 : prevIndex - 1
+        );
     };
 
     const handleCloseModal = () => {
         setModalVisible(false);
-        setSelectedPhoto(null);
     };
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "ArrowRight") handleNextPhoto();
+            if (event.key === "ArrowLeft") handlePrevPhoto();
+            if (event.key === "Escape") handleCloseModal();
+        };
+
+        if (modalVisible) {
+            window.addEventListener("keydown", handleKeyDown);
+        } else {
+            window.removeEventListener("keydown", handleKeyDown);
+        }
+
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [modalVisible]);
 
     return (
         <div>
@@ -73,21 +99,21 @@ const ProfilePage = ({ data }) => {
                     </button>
                 </div>
 
-                {/* Tabs */}
+
                 <div className="tabs">
                     <div className={`tab ${activeTab === 'photos' ? 'active' : ''}`} onClick={() => setActiveTab('photos')}>Photos</div>
                     <div className={`tab ${activeTab === 'rated' ? 'active' : ''}`} onClick={() => setActiveTab('rated')}>Rated Beaches</div>
                     <div className={`tab ${activeTab === 'wishlist' ? 'active' : ''}`} onClick={() => setActiveTab('wishlist')}>Beach Wishlist</div>
                 </div>
 
-                {/* Tab Content */}
+
                 <div className="tab-content">
                     {activeTab === 'photos' && (
                         <div className="photos-section">
                             <h3 className="section-title">Uploaded Photos</h3>
                             <div className="photos-grid">
-                                {user.uploadedPhotos.map(photo => (
-                                    <div key={photo.id} className="photo-item" onClick={() => handlePhotoClick(photo)}>
+                                {user.uploadedPhotos.map((photo, index) => (
+                                    <div key={photo.id} className="photo-item" onClick={() => handlePhotoClick(index)}>
                                         <div className="photo-location">{photo.location}</div>
                                         <img src={photo.src} alt="Beach" className="uploaded-photo" />
                                     </div>
@@ -96,17 +122,32 @@ const ProfilePage = ({ data }) => {
                         </div>
                     )}
 
-                    {/* Modal */}
-                    {selectedPhoto && (
-                        <div className={`photo-modal ${selectedPhoto ? 'show' : ''}`} onClick={() => setSelectedPhoto(null)}>
-                            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                                <span className="close-btn" onClick={() => setSelectedPhoto(null)}>&times;</span>
-                                <img src={selectedPhoto.src} alt="Beach" className="modal-photo" />
-                                <p className="modal-location">{selectedPhoto.location}</p>
-                                <p className="modal-date">Uploaded on: {selectedPhoto.uploadedAt}</p>
+                    <div className={`photo-modal ${modalVisible ? "show" : ""}`} onClick={handleCloseModal}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                            <span className="close-btn" onClick={handleCloseModal}>&times;</span>
+
+                            <div className="photo-container">
+                                <button className="prev-btn" onClick={handlePrevPhoto}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
+
+                                <img src={user.uploadedPhotos[currentPhotoIndex]?.src} alt="Beach" className="modal-photo" />
+
+                                <button className="next-btn" onClick={handleNextPhoto}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </button>
                             </div>
+
+                            <p className="modal-location">{user.uploadedPhotos[currentPhotoIndex]?.location}</p>
+                            <p className="modal-date">Uploaded on: {user.uploadedPhotos[currentPhotoIndex]?.uploadDate}</p>
                         </div>
-                    )}
+                    </div>
+
+
                     {activeTab === 'rated' && (
                         <div className="rated-beaches-section">
                             <h3 className="section-title">Rated Beaches & Reviews</h3>
@@ -141,7 +182,7 @@ const ProfilePage = ({ data }) => {
                     )}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
