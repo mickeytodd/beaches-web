@@ -5,9 +5,11 @@ import './Header.css';
 
 const Header = ({ data }) => {
     return (
-        <header className='beachHeader'>
-            <Navbar />
-            <SearchBar data={data} />
+        <header className='beachHeaderWrapper'>
+            <div className='beachHeader'>
+                <Navbar />
+                <SearchBar data={data} />
+            </div>
         </header>
     );
 };

@@ -13,7 +13,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 220px;
     background-color: #f0f0f0;
     color: #2F4F4F;
     position: sticky;
@@ -67,21 +66,6 @@
     width: 100%;
 }
 
-.navbar__hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.navbar__hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #2F4F4F;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
 .navbar__links {
     display: flex;
     align-items: center;
@@ -112,29 +96,52 @@
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
+.navbar__avatar {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .navbar__menu {
         display: none;
-        flex-direction: column;
-        background-color: #f0f0f0;
-        top: 70px;
-        right: 20px;
+    }
+
+    .navbar__avatar {
+        display: block;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .navbar__dropdown {
         position: absolute;
-        padding: 10px 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .navbar__menu.open {
+        right: 0;
+        top: 60px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        padding: 15px 20px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+        animation: dropdownFade 0.3s ease;
     }
 
-    .navbar__hamburger {
-        display: flex;
+    .navbar__dropdown li a,
+    .navbar__dropdown .login-btn {
+        font-size: 1rem;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 
-    .login-btn {
-        font-size: 14px;
-        padding: 8px 16px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
