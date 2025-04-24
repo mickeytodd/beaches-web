@@ -8,6 +8,14 @@ const Navbar = () => {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+    const toggleDropdown = (e) => {
+        // Prevent opening the dropdown when clicking on the login button
+        if (e.target.classList.contains("login-btn")) {
+            return;
+        }
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
     return (
         <div className='navbar__container'>
             <nav className='navbar'>
@@ -20,19 +28,24 @@ const Navbar = () => {
                         <li><a href="/profile">My Profile</a></li>
                         <li><a href="#favorites">Favorites</a></li>
                     </ul>
-                    <button className="login-btn" onClick={() => setIsLoginOpen(true)}>
+                </div>
+                <div className="navbar__right">
+                    <div className="navbar__avatar" onClick={toggleDropdown}>
+                        <UserAvatar imageUrl={userIcon} />
+                        {isDropdownOpen && (
+                            <ul className="navbar__dropdown">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/profile">My Profile</a></li>
+                                <li><a href="#favorites">Favorites</a></li>
+                            </ul>
+                        )}
+                    </div>
+                    <button
+                        className="login-btn"
+                        onClick={() => setIsLoginOpen(true)}
+                    >
                         Log in
                     </button>
-                </div>
-                <div className="navbar__avatar" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                    <UserAvatar imageUrl={userIcon} />
-                    {isDropdownOpen && (
-                        <ul className="navbar__dropdown">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/profile">My Profile</a></li>
-                            <li><a href="#favorites">Favorites</a></li>
-                        </ul>
-                    )}
                 </div>
             </nav>
 
