@@ -35,10 +35,13 @@
 .navbar__menu {
     display: flex;
     align-items: center;
-    gap: 20px;
+}
+
+.navbar__list {
+    display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    gap: 20px;
+    padding: 0 10px;
 }
 
 
