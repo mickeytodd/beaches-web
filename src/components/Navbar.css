@@ -121,6 +121,7 @@
         padding: 0 16px;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
     }
 
     .navbar__menu {
@@ -301,5 +302,16 @@
         to {
             transform: translateX(0);
         }
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .navbar__logo a {
+        font-size: 2.2rem;
+        padding: 0;
     }
 }

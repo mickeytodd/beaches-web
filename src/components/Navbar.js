@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import UserAvatar from './UserAvatar';
-import userIcon from '../assets/images/user.png';
 import Login from './Login/Login';
 import { FaHome, FaUser, FaHeart } from 'react-icons/fa';
+import fakeUserImg from '../assets/images/fakeuser.jpg';
 
 const Navbar = () => {
     const fakeUser = {
         name: "Fake User",
-        imgUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        imgUrl: fakeUserImg,
     };
 
     const [user, setUser] = useState(fakeUser);
