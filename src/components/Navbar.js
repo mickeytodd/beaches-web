@@ -32,13 +32,6 @@ const Navbar = () => {
                     <div className="navbar__avatar" onClick={toggleDropdown}>
                         <UserAvatar imageUrl={userIcon} />
                     </div>
-                    {isDropdownOpen && (
-                        <ul className="navbar__dropdown">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/profile">My Profile</a></li>
-                            <li><a href="#favorites">Favorites</a></li>
-                        </ul>
-                    )}
                     <button
                         className="login-btn"
                         onClick={() => setIsLoginOpen(true)}
@@ -47,6 +40,13 @@ const Navbar = () => {
                     </button>
                 </div>
             </nav>
+            {isDropdownOpen && (
+                <ul className="navbar__dropdown--mobile">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                </ul>
+            )}
 
             <Login isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
         </div>
