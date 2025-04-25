@@ -246,6 +246,53 @@
         color: #00796b;
     }
 
+    .mobile__login {
+        padding: 16px;
+        border-top: 1px solid #eee;
+        text-align: center;
+    }
+
+    .mobile__login-btn {
+        width: 100%;
+        background-color: #00796b;
+        color: white;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+        cursor: pointer;
+    }
+
+    .mobile__login-btn:hover {
+        background-color: #005f54;
+    }
+
+    .mobile__logout {
+        padding: 16px;
+        border-top: 1px solid #eee;
+        text-align: center;
+    }
+
+    .mobile__logout-btn {
+        width: 100%;
+        background-color: #c62828;
+        color: white;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+        cursor: pointer;
+    }
+
+    .mobile__logout-btn:hover {
+        background-color: #8e0000;
+    }
+
+
     @keyframes slideIn {
         from {
             transform: translateX(-100%);
