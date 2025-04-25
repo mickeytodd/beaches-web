@@ -9,7 +9,6 @@ const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = (e) => {
-        // Prevent opening the dropdown when clicking on the login button
         if (e.target.classList.contains("login-btn")) {
             return;
         }
@@ -32,14 +31,14 @@ const Navbar = () => {
                 <div className="navbar__right">
                     <div className="navbar__avatar" onClick={toggleDropdown}>
                         <UserAvatar imageUrl={userIcon} />
-                        {isDropdownOpen && (
-                            <ul className="navbar__dropdown">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/profile">My Profile</a></li>
-                                <li><a href="#favorites">Favorites</a></li>
-                            </ul>
-                        )}
                     </div>
+                    {isDropdownOpen && (
+                        <ul className="navbar__dropdown">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/profile">My Profile</a></li>
+                            <li><a href="#favorites">Favorites</a></li>
+                        </ul>
+                    )}
                     <button
                         className="login-btn"
                         onClick={() => setIsLoginOpen(true)}

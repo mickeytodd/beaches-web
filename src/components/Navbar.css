@@ -40,6 +40,7 @@
 
 .navbar__right {
     display: flex;
+    position: relative;
 }
 
 
@@ -112,41 +113,75 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     .navbar__menu {
         display: none;
     }
 
     .navbar__avatar {
-        display: block;
-        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         cursor: pointer;
+        margin-left: auto;
+    }
+
+    .navbar__right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .login-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-left: 0;
+        border-radius: 20px;
     }
 
     .navbar__dropdown {
         position: absolute;
+        top: 100%;
+        left: 0;
         right: 0;
-        top: 60px;
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 12px;
-        padding: 15px 20px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        background-color: #ffffff;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        animation: dropdownFade 0.3s ease-out;
+        z-index: 20;
+        padding: 12px 0;
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        z-index: 10;
-        animation: dropdownFade 0.3s ease;
+        gap: 8px;
     }
 
-    .navbar__dropdown li a,
-    .navbar__dropdown .login-btn {
+    .navbar__dropdown li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar__dropdown li a {
         font-size: 1rem;
-        text-align: left;
-        width: 100%;
+        color: #2f4f4f;
+        text-decoration: none;
+        padding: 12px 20px;
+        display: block;
+        transition: background-color 0.2s ease, padding-left 0.2s ease;
+        border-radius: 6px;
     }
 
-    .login-btn {
-        margin-left: 10px;
+    .navbar__dropdown li a:hover {
+        background-color: #f0f8f6;
+        padding-left: 24px;
     }
+
+
 }
 
 @keyframes dropdownFade {
